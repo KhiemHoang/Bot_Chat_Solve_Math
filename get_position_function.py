@@ -1,6 +1,7 @@
 from vncorenlp import VnCoreNLP
 import pandas as pd
 import vietnamese_standardized as vnstandard
+import regex as re
 
 x = 0
 
@@ -22,15 +23,13 @@ def covert_unicode(txt):
 
 def postagging(text):
     annotator = VnCoreNLP("VnCoreNLP\VnCoreNLP-1.1.1.jar", annotators="wseg, pos", max_heap_size='-Xmx2g') 
-    s1 = annotator.pos_tag(text)
-    return s1
-    # text = covert_unicode(text)
+    text = covert_unicode(text)
         
-    # s1 = pd.DataFrame()
-    # s1 = s1.append(annotator.pos_tag(text))
-    # s1 = s1.fillna('null value')
-    # s1.columns = s1.columns.map(str)
-    # return s1
+    s1 = pd.DataFrame()
+    s1 = s1.append(annotator.pos_tag(text))
+    s1 = s1.fillna('null value')
+    s1.columns = s1.columns.map(str)
+    return s1
 
 def print_only():
     print('hello')
