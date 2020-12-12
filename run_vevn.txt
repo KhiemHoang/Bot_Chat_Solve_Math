@@ -1,0 +1,4 @@
+1) go duong path
+E:
+cd thesis\code\Bot_Chat_Solve_Math
+2) chay .\vevn\Scripts\activate

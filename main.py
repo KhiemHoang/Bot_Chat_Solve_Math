@@ -3,4 +3,4 @@ from vncorenlp import VnCoreNLP
 
 
 if __name__ == '__main__':
-    func.print_only()
+    print(func.postagging('có con chim vành khuyên nhỏ'))
