@@ -2,16 +2,27 @@ import pandas as pd
 def find_owner_1(df_final, df_pos):
     owner_set = []
     for fin in range(len(df_final)):
+        check_pos = 0
         for pos in range(len(df_pos)):
             if fin == pos:
                 for col in range(len(df_pos.columns)):
-                    word_tag = ['Np', 'N', 'P']
+                    word_tag = ['Np', 'N', 'P', 'Nc']
                     word = df_pos.loc[pos, '%s'%(col)]
 
                     if word[1] in word_tag and word != 'null value':
                         df_final.at[fin, 'owner_1'] = word[0]
                         owner_set.append('%s'%(word[0]))
                         df_pos.at[fin, '%s'%(col)] = 'null value'
+
+                        while check_pos < (len(df_pos.columns) - col):
+                            sub_owner = df_pos.loc[pos, '%s'%(col + check_pos)]
+                            if sub_owner != 'null value' and sub_owner[1] in word_tag:
+                                sub_str = df_final['owner_1'].iloc[pos] + ' ' + sub_owner[0]
+                                df_final.at[pos, 'owner_1'] = sub_str
+                                df_pos.at[pos, '%s'%(col + check_pos)] = 'null value'                            
+                            elif sub_owner != 'null value' and sub_owner[1] not in word_tag:
+                                break
+                            check_pos = check_pos + 1
                         break
     return df_final, df_pos, owner_set
 
@@ -34,7 +45,7 @@ def find_verb(df_final, df_pos):
         for pos in range(len(df_pos)):
             if fin == pos:
                 for col in range(len(df_pos.columns)):
-                    word_tag = ['V', 'E']
+                    word_tag = ['V', 'E', 'R']
                     word_flag = ['Hỏi', 'Tổng_cộng']
                     word = df_pos.loc[pos, '%s'%(col)]
 
