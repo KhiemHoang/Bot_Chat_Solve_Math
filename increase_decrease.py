@@ -2,6 +2,7 @@ import vietnamese_nlp as vnlp
 import get_position_function as func
 import pandas as pd
 
+
 def get_pos_df(df_final, df_pos):
     df_final, df_pos = func.is_question(df_final, df_pos)
     df_final, df_pos, owner_set = func.find_owner_1(df_final, df_pos)

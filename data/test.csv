@@ -1,0 +1,201 @@
+﻿problem,first_subject,first_number,second_subject,second_number,object,result,problem_type,date_create,date_modify
+Ngạn có 3 quả măng cụt. Ngạn mua thêm 10 quả măng cụt nữa. Hỏi Ngạn có bao nhiêu quả măng cụt?,Ngạn,3,null,10,quả măng cụt,13,increase,2020-10-12 09:36:38.147552,2020-10-12 09:36:38.147552
+Ngọc có 3 cây thước. Ngọc mua thêm 9 cây thước nữa. Hỏi Ngọc có bao nhiêu cây thước?,Ngọc,3,null,9,cây thước,12,increase,2020-10-12 09:36:38.153503,2020-10-12 09:36:38.153503
+Ngạn có 5 quyển vở. Ngạn mua 3 quyển vở từ Cháu. Hỏi Ngạn có bao nhiêu quyển vở?,Ngạn,5,Cháu,3,quyển vở,8,change_in,2020-10-12 09:36:38.157493,2020-10-12 09:36:38.157493
+Ngạn có 7 quả quýt. Ngạn bị mất 1 quả quýt . Hỏi Ngạn còn bao nhiêu quả quýt?,Ngạn,7,null,1,quả quýt,6,reducion,2020-10-12 09:36:38.162480,2020-10-12 09:36:38.162480
+Cô giáo có 8 cái bánh mặn. Cô giáo ăn mất 6 cái bánh mặn . Hỏi Cô giáo còn bao nhiêu cái bánh mặn?,Cô giáo,8,null,6,cái bánh mặn,2,reducion,2020-10-12 09:36:38.167472,2020-10-12 09:36:38.168495
+Chị Xuân có 4 quả măng cụt. Chị Xuân nhận thêm 4 quả măng cụt nữa. Hỏi Chị Xuân có bao nhiêu quả măng cụt?,Chị Xuân,4,null,4,quả măng cụt,8,increase,2020-10-12 09:36:38.172453,2020-10-12 09:36:38.172453
+Bác có 6 quả măng cụt. Bác mượn 4 quả măng cụt từ Linh. Hỏi Bác có bao nhiêu quả măng cụt?,Bác,6,Linh,4,quả măng cụt,10,change_in,2020-10-12 09:36:38.176443,2020-10-12 09:36:38.176443
+Chú có 6 cái bánh ngọt. Chú bỏ đi 1 cái bánh ngọt . Hỏi Chú còn bao nhiêu cái bánh ngọt?,Chú,6,null,1,cái bánh ngọt,5,reducion,2020-10-12 09:36:38.180432,2020-10-12 09:36:38.180432
+Dì có 1 cây thước. Dì lấy được 4 cây thước từ Chú. Hỏi Dì có bao nhiêu cây thước?,Dì,1,Chú,4,cây thước,5,change_in,2020-10-12 09:36:38.185418,2020-10-12 09:36:38.186415
+Cháu có 10 quả quýt. Cháu có thêm 9 quả quýt nữa. Hỏi Cháu có bao nhiêu quả quýt?,Cháu,10,null,9,quả quýt,19,increase,2020-10-12 09:36:38.190406,2020-10-12 09:36:38.190406
+Mình có 6 cái bánh mặn. Mình nhận thêm 10 cái bánh mặn nữa. Hỏi Mình có bao nhiêu cái bánh mặn?,Mình,6,null,10,cái bánh mặn,16,increase,2020-10-12 09:36:38.195392,2020-10-12 09:36:38.195392
+Cậu có 6 quyển vở. Cậu nhận thêm 10 quyển vở nữa. Hỏi Cậu có bao nhiêu quyển vở?,Cậu,6,null,10,quyển vở,16,increase,2020-10-12 09:36:38.200379,2020-10-12 09:36:38.200379
+Bác có 4 quả dưa. Bác cho 2 quả dưa cho Jenny. Hỏi Bác còn bao nhiêu quả dưa?,Bác,4,Jenny,2,quả dưa,2,change_out,2020-10-12 09:36:38.204368,2020-10-12 09:36:38.205366
+David có 6 trái bóng rổ. David bị mất 1 trái bóng rổ . Hỏi David còn bao nhiêu trái bóng rổ?,David,6,null,1,trái bóng rổ,5,reducion,2020-10-12 09:36:38.209355,2020-10-12 09:36:38.209355
+Cháu có 8 cây thước. Cháu mượn 3 cây thước từ Dì. Hỏi Cháu có bao nhiêu cây thước?,Cháu,8,Dì,3,cây thước,11,change_in,2020-10-12 09:36:38.213344,2020-10-12 09:36:38.213344
+Cậu có 5 cái bánh mặn. Cậu phân phát 4 cái bánh mặn cho David. Hỏi Cậu còn bao nhiêu cái bánh mặn?,Cậu,5,David,4,cái bánh mặn,1,change_out,2020-10-12 09:36:38.217332,2020-10-12 09:36:38.218330
+Bé An có 10 trái bóng bàn. Bé An ăn mất 1 trái bóng bàn . Hỏi Bé An còn bao nhiêu trái bóng bàn?,Bé An,10,null,1,trái bóng bàn,9,reducion,2020-10-12 09:36:38.222319,2020-10-12 09:36:38.222319
+Dũng có 9 quả măng cụt. Mai có 10 quả măng cụt . Hỏi Dũng và Mai có tổng cộng bao nhiêu quả măng cụt?,Dũng,9,Mai,10,quả măng cụt,19,combine,2020-10-12 09:36:38.226309,2020-10-12 09:36:38.226309
+Dũng có 4 quyển tự sự. Ngọc có 5 quyển tự sự . Hỏi Dũng và Ngọc có cùng nhau bao nhiêu quyển tự sự?,Dũng,4,Ngọc,5,quyển tự sự,9,combine,2020-10-12 09:36:38.230298,2020-10-12 09:36:38.230298
+Linh có 8 quyển vở. Linh phân phát 8 quyển vở cho Dì. Hỏi Linh còn bao nhiêu quyển vở?,Linh,8,Dì,8,quyển vở,0,change_out,2020-10-12 09:36:38.234287,2020-10-12 09:36:38.234287
+Dì có 8 quả dâu. Thầy giáo có 10 quả dâu . Hỏi Dì và Thầy giáo có tổng cộng bao nhiêu quả dâu?,Dì,8,Thầy giáo,10,quả dâu,18,combine,2020-10-12 09:36:38.238276,2020-10-12 09:36:38.238276
+Linh có 6 cây thước. Linh bị mất 2 cây thước . Hỏi Linh còn bao nhiêu cây thước?,Linh,6,null,2,cây thước,4,reducion,2020-10-12 09:36:38.242266,2020-10-12 09:36:38.242266
+Mình có 7 quả dưa. Mình sử dụng 3 quả dưa . Hỏi Mình còn bao nhiêu quả dưa?,Mình,7,null,3,quả dưa,4,reducion,2020-10-12 09:36:38.246255,2020-10-12 09:36:38.246255
+Thầy giáo có 5 trái bóng bàn. Thầy giáo đặt xuống 5 trái bóng bàn . Hỏi Thầy giáo còn bao nhiêu trái bóng bàn?,Thầy giáo,5,null,5,trái bóng bàn,0,reducion,2020-10-12 09:36:38.250245,2020-10-12 09:36:38.251242
+David có 9 cái bánh ngọt. David lấy được 1 cái bánh ngọt từ Cháu. Hỏi David có bao nhiêu cái bánh ngọt?,David,9,Cháu,1,cái bánh ngọt,10,change_in,2020-10-12 09:36:38.255231,2020-10-12 09:36:38.255231
+Chị Xuân có 10 quyển vở. Chị Xuân nhận thêm 6 quyển vở nữa. Hỏi Chị Xuân có bao nhiêu quyển vở?,Chị Xuân,10,null,6,quyển vở,16,increase,2020-10-12 09:36:38.259221,2020-10-12 09:36:38.259221
+Linh có 9 quả quýt. Linh phân phát 8 quả quýt cho Ngọc. Hỏi Linh còn bao nhiêu quả quýt?,Linh,9,Ngọc,8,quả quýt,1,change_out,2020-10-12 09:36:38.264207,2020-10-12 09:36:38.264207
+Thầy giáo có 1 trái bóng rổ. David có 7 trái bóng rổ . Hỏi Thầy giáo và David có cùng nhau bao nhiêu trái bóng rổ?,Thầy giáo,1,David,7,trái bóng rổ,8,combine,2020-10-12 09:36:38.268197,2020-10-12 09:36:38.268197
+Dũng có 1 quyển tự sự. Dũng bị mất 1 quyển tự sự . Hỏi Dũng còn bao nhiêu quyển tự sự?,Dũng,1,null,1,quyển tự sự,0,reducion,2020-10-12 09:36:38.272186,2020-10-12 09:36:38.272186
+Jenny có 10 quyển vở. Mai có 7 quyển vở . Hỏi Jenny và Mai có cùng nhau bao nhiêu quyển vở?,Jenny,10,Mai,7,quyển vở,17,combine,2020-10-12 09:36:38.276175,2020-10-12 09:36:38.276175
+Cháu có 2 trái bóng rổ. Cháu bỏ đi 2 trái bóng rổ . Hỏi Cháu còn bao nhiêu trái bóng rổ?,Cháu,2,null,2,trái bóng rổ,0,reducion,2020-10-12 09:36:38.280164,2020-10-12 09:36:38.280164
+Cậu có 5 cây thước. Cậu bị mất 1 cây thước . Hỏi Cậu còn bao nhiêu cây thước?,Cậu,5,null,1,cây thước,4,reducion,2020-10-12 09:36:38.284154,2020-10-12 09:36:38.284154
+Cô giáo có 1 trái bóng rổ. Bé An có 8 trái bóng rổ . Hỏi Cô giáo và Bé An có cùng nhau bao nhiêu trái bóng rổ?,Cô giáo,1,Bé An,8,trái bóng rổ,9,combine,2020-10-12 09:36:38.288143,2020-10-12 09:36:38.288143
+Bác có 9 quyển vở. Bác phân phát 9 quyển vở cho Bé An. Hỏi Bác còn bao nhiêu quyển vở?,Bác,9,Bé An,9,quyển vở,0,change_out,2020-10-12 09:36:38.292133,2020-10-12 09:36:38.292133
+Thầy giáo có 6 cái bánh mặn. Dũng có 4 cái bánh mặn . Hỏi Thầy giáo và Dũng có tổng cộng bao nhiêu cái bánh mặn?,Thầy giáo,6,Dũng,4,cái bánh mặn,10,combine,2020-10-12 09:36:38.296122,2020-10-12 09:36:38.296122
+Ngạn có 1 quả dâu. Chú có 2 quả dâu . Hỏi Ngạn và Chú có tổng cộng bao nhiêu quả dâu?,Ngạn,1,Chú,2,quả dâu,3,combine,2020-10-12 09:36:38.300111,2020-10-12 09:36:38.300111
+Mai có 7 cái bánh mặn. Mai mượn 9 cái bánh mặn từ Ngạn. Hỏi Mai có bao nhiêu cái bánh mặn?,Mai,7,Ngạn,9,cái bánh mặn,16,change_in,2020-10-12 09:36:38.303103,2020-10-12 09:36:38.304101
+Bé An có 10 cây thước. Bé An phân phát 6 cây thước cho Linh. Hỏi Bé An còn bao nhiêu cây thước?,Bé An,10,Linh,6,cây thước,4,change_out,2020-10-12 09:36:38.307092,2020-10-12 09:36:38.307092
+Jenny có 9 cây thước. Jenny mua 7 cây thước từ Cháu. Hỏi Jenny có bao nhiêu cây thước?,Jenny,9,Cháu,7,cây thước,16,change_in,2020-10-12 09:36:38.311082,2020-10-12 09:36:38.311082
+Bé An có 4 cái bánh ngọt. Dũng có 1 cái bánh ngọt . Hỏi Bé An và Dũng có cùng nhau bao nhiêu cái bánh ngọt?,Bé An,4,Dũng,1,cái bánh ngọt,5,combine,2020-10-12 09:36:38.315071,2020-10-12 09:36:38.315071
+Mai có 3 quả dưa. Mai mua thêm 5 quả dưa nữa. Hỏi Mai có bao nhiêu quả dưa?,Mai,3,null,5,quả dưa,8,increase,2020-10-12 09:36:38.319060,2020-10-12 09:36:38.319060
+Cháu có 7 trái bóng bàn. Mai có 1 trái bóng bàn . Hỏi Cháu và Mai có cùng nhau bao nhiêu trái bóng bàn?,Cháu,7,Mai,1,trái bóng bàn,8,combine,2020-10-12 09:36:38.323050,2020-10-12 09:36:38.323050
+Mai có 6 quả quýt. Cô có 7 quả quýt . Hỏi Mai và Cô có cùng nhau bao nhiêu quả quýt?,Mai,6,Cô,7,quả quýt,13,combine,2020-10-12 09:36:38.327039,2020-10-12 09:36:38.327039
+Dì có 2 quả măng cụt. Dì đặt xuống 1 quả măng cụt . Hỏi Dì còn bao nhiêu quả măng cụt?,Dì,2,null,1,quả măng cụt,1,reducion,2020-10-12 09:36:38.331029,2020-10-12 09:36:38.331029
+Dì có 10 cây thước. Dì đưa 1 cây thước cho Cô. Hỏi Dì còn bao nhiêu cây thước?,Dì,10,Cô,1,cây thước,9,change_out,2020-10-12 09:36:38.334020,2020-10-12 09:36:38.335018
+Mình có 2 cái bánh ngọt. Mình mua 1 cái bánh ngọt từ Cậu. Hỏi Mình có bao nhiêu cái bánh ngọt?,Mình,2,Cậu,1,cái bánh ngọt,3,change_in,2020-10-12 09:36:38.338010,2020-10-12 09:36:38.338010
+Bác có 5 quả dưa. Cô giáo có 7 quả dưa . Hỏi Bác và Cô giáo có tổng cộng bao nhiêu quả dưa?,Bác,5,Cô giáo,7,quả dưa,12,combine,2020-10-12 09:36:38.341999,2020-10-12 09:36:38.341999
+Ngọc có 2 cái bánh ngọt. Chú có 7 cái bánh ngọt . Hỏi Ngọc và Chú có cùng nhau bao nhiêu cái bánh ngọt?,Ngọc,2,Chú,7,cái bánh ngọt,9,combine,2020-10-12 09:36:38.345988,2020-10-12 09:36:38.345988
+Jenny có 2 cái bánh mặn. Jenny lấy được 6 cái bánh mặn từ David. Hỏi Jenny có bao nhiêu cái bánh mặn?,Jenny,2,David,6,cái bánh mặn,8,change_in,2020-10-12 09:36:38.349978,2020-10-12 09:36:38.349978
+Bé An có 5 cái bánh ngọt. Bé An bị mất 2 cái bánh ngọt . Hỏi Bé An còn bao nhiêu cái bánh ngọt?,Bé An,5,null,2,cái bánh ngọt,3,reducion,2020-10-12 09:36:38.353967,2020-10-12 09:36:38.353967
+Bé An có 3 trái bóng rổ. Bé An cho 2 trái bóng rổ cho Ngạn. Hỏi Bé An còn bao nhiêu trái bóng rổ?,Bé An,3,Ngạn,2,trái bóng rổ,1,change_out,2020-10-12 09:36:38.357956,2020-10-12 09:36:38.357956
+Chị Xuân có 9 cái bánh mặn. Chị Xuân nhận được 1 cái bánh mặn từ Jenny. Hỏi Chị Xuân có bao nhiêu cái bánh mặn?,Chị Xuân,9,Jenny,1,cái bánh mặn,10,change_in,2020-10-12 09:36:38.361946,2020-10-12 09:36:38.361946
+Jenny có 7 quả dưa. Mình có 6 quả dưa . Hỏi Jenny và Mình có tổng cộng bao nhiêu quả dưa?,Jenny,7,Mình,6,quả dưa,13,combine,2020-10-12 09:36:38.365935,2020-10-12 09:36:38.365935
+Chú có 2 quả măng cụt. Chú mua 8 quả măng cụt từ Jenny. Hỏi Chú có bao nhiêu quả măng cụt?,Chú,2,Jenny,8,quả măng cụt,10,change_in,2020-10-12 09:36:38.369924,2020-10-12 09:36:38.369924
+Bé An có 2 cái bánh ngọt. Bé An sử dụng 1 cái bánh ngọt . Hỏi Bé An còn bao nhiêu cái bánh ngọt?,Bé An,2,null,1,cái bánh ngọt,1,reducion,2020-10-12 09:36:38.373917,2020-10-12 09:36:38.373917
+Dì có 4 trái bóng rổ. Dì bán 3 trái bóng rổ cho Mai. Hỏi Dì còn bao nhiêu trái bóng rổ?,Dì,4,Mai,3,trái bóng rổ,1,change_out,2020-10-12 09:36:38.377903,2020-10-12 09:36:38.377903
+Cậu có 2 quả dâu. Cậu bán 1 quả dâu cho Ngạn. Hỏi Cậu còn bao nhiêu quả dâu?,Cậu,2,Ngạn,1,quả dâu,1,change_out,2020-10-12 09:36:38.380895,2020-10-12 09:36:38.381892
+Cô giáo có 5 quả măng cụt. Cô giáo mua 3 quả măng cụt từ Cậu. Hỏi Cô giáo có bao nhiêu quả măng cụt?,Cô giáo,5,Cậu,3,quả măng cụt,8,change_in,2020-10-12 09:36:38.384884,2020-10-12 09:36:38.385882
+Dũng có 1 quả dâu. Dũng lấy được 9 quả dâu từ Chị Xuân. Hỏi Dũng có bao nhiêu quả dâu?,Dũng,1,Chị Xuân,9,quả dâu,10,change_in,2020-10-12 09:36:38.388874,2020-10-12 09:36:38.388874
+Bé An có 1 cái bánh mặn. Jenny có 8 cái bánh mặn . Hỏi Bé An và Jenny có tổng cộng bao nhiêu cái bánh mặn?,Bé An,1,Jenny,8,cái bánh mặn,9,combine,2020-10-12 09:36:38.394858,2020-10-12 09:36:38.394858
+Thầy giáo có 7 trái bóng rổ. Thầy giáo phân phát 6 trái bóng rổ cho Linh. Hỏi Thầy giáo còn bao nhiêu trái bóng rổ?,Thầy giáo,7,Linh,6,trái bóng rổ,1,change_out,2020-10-12 09:36:38.399845,2020-10-12 09:36:38.399845
+Cậu có 10 quả quýt. Cậu mua 1 quả quýt từ Jenny. Hỏi Cậu có bao nhiêu quả quýt?,Cậu,10,Jenny,1,quả quýt,11,change_in,2020-10-12 09:36:38.404831,2020-10-12 09:36:38.404831
+Jenny có 9 cái bánh mặn. Cô có 2 cái bánh mặn . Hỏi Jenny và Cô có cùng nhau bao nhiêu cái bánh mặn?,Jenny,9,Cô,2,cái bánh mặn,11,combine,2020-10-12 09:36:38.409818,2020-10-12 09:36:38.409818
+Bé An có 2 trái bóng bàn. Bác có 10 trái bóng bàn . Hỏi Bé An và Bác có tổng cộng bao nhiêu trái bóng bàn?,Bé An,2,Bác,10,trái bóng bàn,12,combine,2020-10-12 09:36:38.415802,2020-10-12 09:36:38.415802
+Bé An có 5 quả quýt. Bé An mua thêm 5 quả quýt nữa. Hỏi Bé An có bao nhiêu quả quýt?,Bé An,5,null,5,quả quýt,10,increase,2020-10-12 09:36:38.420789,2020-10-12 09:36:38.420789
+David có 9 quả dưa. Mai có 7 quả dưa . Hỏi David và Mai có tổng cộng bao nhiêu quả dưa?,David,9,Mai,7,quả dưa,16,combine,2020-10-12 09:36:38.425776,2020-10-12 09:36:38.425776
+David có 7 quả dâu. David đặt xuống 7 quả dâu . Hỏi David còn bao nhiêu quả dâu?,David,7,null,7,quả dâu,0,reducion,2020-10-12 09:36:38.430762,2020-10-12 09:36:38.430762
+Linh có 4 quyển tự sự. Linh nhặt được 6 quyển tự sự nữa. Hỏi Linh có bao nhiêu quyển tự sự?,Linh,4,null,6,quyển tự sự,10,increase,2020-10-12 09:36:38.435749,2020-10-12 09:36:38.435749
+Jenny có 1 quyển vở. Jenny mua thêm 3 quyển vở nữa. Hỏi Jenny có bao nhiêu quyển vở?,Jenny,1,null,3,quyển vở,4,increase,2020-10-12 09:36:38.440735,2020-10-12 09:36:38.440735
+Jenny có 4 trái bóng bàn. Cô có 2 trái bóng bàn . Hỏi Jenny và Cô có tổng cộng bao nhiêu trái bóng bàn?,Jenny,4,Cô,2,trái bóng bàn,6,combine,2020-10-12 09:36:38.445722,2020-10-12 09:36:38.445722
+Chị Xuân có 5 quả măng cụt. Chị Xuân mượn 8 quả măng cụt từ Linh. Hỏi Chị Xuân có bao nhiêu quả măng cụt?,Chị Xuân,5,Linh,8,quả măng cụt,13,change_in,2020-10-12 09:36:38.450709,2020-10-12 09:36:38.450709
+Mình có 10 cây thước. Mình đặt xuống 3 cây thước . Hỏi Mình còn bao nhiêu cây thước?,Mình,10,null,3,cây thước,7,reducion,2020-10-12 09:36:38.455695,2020-10-12 09:36:38.455695
+Dũng có 7 quả măng cụt. Cô có 4 quả măng cụt . Hỏi Dũng và Cô có tổng cộng bao nhiêu quả măng cụt?,Dũng,7,Cô,4,quả măng cụt,11,combine,2020-10-12 09:36:38.460682,2020-10-12 09:36:38.460682
+Bé An có 4 trái bóng bàn. Bé An mua thêm 2 trái bóng bàn nữa. Hỏi Bé An có bao nhiêu trái bóng bàn?,Bé An,4,null,2,trái bóng bàn,6,increase,2020-10-12 09:36:38.465668,2020-10-12 09:36:38.465668
+Cô có 1 trái bóng bàn. Cháu có 5 trái bóng bàn . Hỏi Cô và Cháu có cùng nhau bao nhiêu trái bóng bàn?,Cô,1,Cháu,5,trái bóng bàn,6,combine,2020-10-12 09:36:38.470656,2020-10-12 09:36:38.471653
+Bé An có 2 cái bánh mặn. Bé An phân phát 2 cái bánh mặn cho Mình. Hỏi Bé An còn bao nhiêu cái bánh mặn?,Bé An,2,Mình,2,cái bánh mặn,0,change_out,2020-10-12 09:36:38.477637,2020-10-12 09:36:38.477637
+Dũng có 8 quả quýt. Dũng cho 1 quả quýt cho Dì. Hỏi Dũng còn bao nhiêu quả quýt?,Dũng,8,Dì,1,quả quýt,7,change_out,2020-10-12 09:36:38.482623,2020-10-12 09:36:38.482623
+Chú có 1 quả dưa. Cháu có 10 quả dưa . Hỏi Chú và Cháu có tổng cộng bao nhiêu quả dưa?,Chú,1,Cháu,10,quả dưa,11,combine,2020-10-12 09:36:38.487610,2020-10-12 09:36:38.487610
+Dì có 1 quả măng cụt. Dì bỏ đi 1 quả măng cụt . Hỏi Dì còn bao nhiêu quả măng cụt?,Dì,1,null,1,quả măng cụt,0,reducion,2020-10-12 09:36:38.492596,2020-10-12 09:36:38.492596
+Cô giáo có 2 quả quýt. Cô giáo bán 2 quả quýt cho Chị Xuân. Hỏi Cô giáo còn bao nhiêu quả quýt?,Cô giáo,2,Chị Xuân,2,quả quýt,0,change_out,2020-10-12 09:36:38.497585,2020-10-12 09:36:38.497585
+Mai có 8 quả quýt. Mai nhận được 9 quả quýt từ Dũng. Hỏi Mai có bao nhiêu quả quýt?,Mai,8,Dũng,9,quả quýt,17,change_in,2020-10-12 09:36:38.502570,2020-10-12 09:36:38.502570
+Ngạn có 9 quả dưa. Ngạn tặng 8 quả dưa cho Jenny. Hỏi Ngạn còn bao nhiêu quả dưa?,Ngạn,9,Jenny,8,quả dưa,1,change_out,2020-10-12 09:36:38.507557,2020-10-12 09:36:38.507557
+Jenny có 4 cây thước. Jenny phân phát 1 cây thước cho Bé An. Hỏi Jenny còn bao nhiêu cây thước?,Jenny,4,Bé An,1,cây thước,3,change_out,2020-10-12 09:36:38.513541,2020-10-12 09:36:38.513541
+Mình có 8 cây thước. Thầy giáo có 2 cây thước . Hỏi Mình và Thầy giáo có cùng nhau bao nhiêu cây thước?,Mình,8,Thầy giáo,2,cây thước,10,combine,2020-10-12 09:36:38.518527,2020-10-12 09:36:38.518527
+Dì có 10 quả dưa. Dì có thêm 1 quả dưa nữa. Hỏi Dì có bao nhiêu quả dưa?,Dì,10,null,1,quả dưa,11,increase,2020-10-12 09:36:38.523514,2020-10-12 09:36:38.523514
+Thầy giáo có 10 cái bánh ngọt. Thầy giáo bán 3 cái bánh ngọt cho Chị Xuân. Hỏi Thầy giáo còn bao nhiêu cái bánh ngọt?,Thầy giáo,10,Chị Xuân,3,cái bánh ngọt,7,change_out,2020-10-12 09:36:38.528500,2020-10-12 09:36:38.528500
+David có 6 trái bóng rổ. Mai có 2 trái bóng rổ . Hỏi David và Mai có cùng nhau bao nhiêu trái bóng rổ?,David,6,Mai,2,trái bóng rổ,8,combine,2020-10-12 09:36:38.533487,2020-10-12 09:36:38.534485
+Dũng có 9 trái bóng rổ. Dũng nhận được 9 trái bóng rổ từ Chị Xuân. Hỏi Dũng có bao nhiêu trái bóng rổ?,Dũng,9,Chị Xuân,9,trái bóng rổ,18,change_in,2020-10-12 09:36:38.538474,2020-10-12 09:36:38.539471
+Ngọc có 2 cái bánh ngọt. Ngọc đưa 2 cái bánh ngọt cho Linh. Hỏi Ngọc còn bao nhiêu cái bánh ngọt?,Ngọc,2,Linh,2,cái bánh ngọt,0,change_out,2020-10-12 09:36:38.543460,2020-10-12 09:36:38.544458
+Linh có 1 quyển vở. Mình có 5 quyển vở . Hỏi Linh và Mình có cùng nhau bao nhiêu quyển vở?,Linh,1,Mình,5,quyển vở,6,combine,2020-10-12 09:36:38.548447,2020-10-12 09:36:38.549444
+Mình có 1 quả quýt. Mình đặt xuống 1 quả quýt . Hỏi Mình còn bao nhiêu quả quýt?,Mình,1,null,1,quả quýt,0,reducion,2020-10-12 09:36:38.553434,2020-10-12 09:36:38.554432
+Linh có 3 quả măng cụt. Linh mượn 7 quả măng cụt từ Ngọc. Hỏi Linh có bao nhiêu quả măng cụt?,Linh,3,Ngọc,7,quả măng cụt,10,change_in,2020-10-12 09:36:38.560415,2020-10-12 09:36:38.560415
+David có 8 quả dâu. Mai có 10 quả dâu . Hỏi David và Mai có tổng cộng bao nhiêu quả dâu?,David,8,Mai,10,quả dâu,18,combine,2020-10-12 09:36:38.567397,2020-10-12 09:36:38.568394
+Dũng có 4 trái bóng rổ. Dũng tìm được 6 trái bóng rổ nữa. Hỏi Dũng có bao nhiêu trái bóng rổ?,Dũng,4,null,6,trái bóng rổ,10,increase,2020-10-12 09:36:38.575375,2020-10-12 09:36:38.575375
+Bé An có 5 quyển vở. Bé An đưa 5 quyển vở cho Jenny. Hỏi Bé An còn bao nhiêu quyển vở?,Bé An,5,Jenny,5,quyển vở,0,change_out,2020-10-12 09:36:38.579364,2020-10-12 09:36:38.579364
+Jenny có 3 trái bóng rổ. Jenny mua thêm 6 trái bóng rổ nữa. Hỏi Jenny có bao nhiêu trái bóng rổ?,Jenny,3,null,6,trái bóng rổ,9,increase,2020-10-12 09:36:38.583353,2020-10-12 09:36:38.584350
+Ngạn có 2 cái bánh ngọt. Cháu có 10 cái bánh ngọt . Hỏi Ngạn và Cháu có cùng nhau bao nhiêu cái bánh ngọt?,Ngạn,2,Cháu,10,cái bánh ngọt,12,combine,2020-10-12 09:36:38.588340,2020-10-12 09:36:38.588340
+Chị Xuân có 8 cái bánh mặn. Chị Xuân bị mất 4 cái bánh mặn . Hỏi Chị Xuân còn bao nhiêu cái bánh mặn?,Chị Xuân,8,null,4,cái bánh mặn,4,reducion,2020-10-12 09:36:38.592329,2020-10-12 09:36:38.592329
+Ngọc có 10 cái bánh ngọt. Ngọc bỏ đi 2 cái bánh ngọt . Hỏi Ngọc còn bao nhiêu cái bánh ngọt?,Ngọc,10,null,2,cái bánh ngọt,8,reducion,2020-10-12 09:36:38.596319,2020-10-12 09:36:38.596319
+Cô giáo có 2 quả dâu. Cô giáo tìm thấy 3 quả dâu nữa. Hỏi Cô giáo có bao nhiêu quả dâu?,Cô giáo,2,null,3,quả dâu,5,increase,2020-10-12 09:36:38.600308,2020-10-12 09:36:38.600308
+Linh có 1 trái bóng rổ. Cháu có 7 trái bóng rổ . Hỏi Linh và Cháu có cùng nhau bao nhiêu trái bóng rổ?,Linh,1,Cháu,7,trái bóng rổ,8,combine,2020-10-12 09:36:38.604297,2020-10-12 09:36:38.604297
+Linh có 10 trái bóng bàn. Linh tặng 3 trái bóng bàn cho Dũng. Hỏi Linh còn bao nhiêu trái bóng bàn?,Linh,10,Dũng,3,trái bóng bàn,7,change_out,2020-10-12 09:36:38.608287,2020-10-12 09:36:38.609316
+Cô giáo có 6 cái bánh ngọt. Chị Xuân có 5 cái bánh ngọt . Hỏi Cô giáo và Chị Xuân có tổng cộng bao nhiêu cái bánh ngọt?,Cô giáo,6,Chị Xuân,5,cái bánh ngọt,11,combine,2020-10-12 09:36:38.612310,2020-10-12 09:36:38.613305
+Bác có 4 cái bánh ngọt. Bác đưa 1 cái bánh ngọt cho Dì. Hỏi Bác còn bao nhiêu cái bánh ngọt?,Bác,4,Dì,1,cái bánh ngọt,3,change_out,2020-10-12 09:36:38.617295,2020-10-12 09:36:38.617295
+Ngọc có 1 quyển vở. Ngọc cho 1 quyển vở cho Linh. Hỏi Ngọc còn bao nhiêu quyển vở?,Ngọc,1,Linh,1,quyển vở,0,change_out,2020-10-12 09:36:38.621284,2020-10-12 09:36:38.621284
+Cháu có 4 quả quýt. Cháu mua thêm 10 quả quýt nữa. Hỏi Cháu có bao nhiêu quả quýt?,Cháu,4,null,10,quả quýt,14,increase,2020-10-12 09:36:38.625273,2020-10-12 09:36:38.625273
+Mình có 7 quả măng cụt. Mình tìm thấy 1 quả măng cụt nữa. Hỏi Mình có bao nhiêu quả măng cụt?,Mình,7,null,1,quả măng cụt,8,increase,2020-10-12 09:36:38.629263,2020-10-12 09:36:38.629263
+Cô giáo có 10 quả dâu. Cô giáo phân phát 9 quả dâu cho Mình. Hỏi Cô giáo còn bao nhiêu quả dâu?,Cô giáo,10,Mình,9,quả dâu,1,change_out,2020-10-12 09:36:38.633252,2020-10-12 09:36:38.633252
+Cậu có 8 quả quýt. Linh có 9 quả quýt . Hỏi Cậu và Linh có tổng cộng bao nhiêu quả quýt?,Cậu,8,Linh,9,quả quýt,17,combine,2020-10-12 09:36:38.637242,2020-10-12 09:36:38.637242
+Thầy giáo có 7 quả dưa. Thầy giáo sử dụng 6 quả dưa . Hỏi Thầy giáo còn bao nhiêu quả dưa?,Thầy giáo,7,null,6,quả dưa,1,reducion,2020-10-12 09:36:38.641231,2020-10-12 09:36:38.641231
+Mai có 3 quả măng cụt. Mai tặng 2 quả măng cụt cho David. Hỏi Mai còn bao nhiêu quả măng cụt?,Mai,3,David,2,quả măng cụt,1,change_out,2020-10-12 09:36:38.645220,2020-10-12 09:36:38.645220
+Cậu có 6 quả măng cụt. Cậu sử dụng 1 quả măng cụt . Hỏi Cậu còn bao nhiêu quả măng cụt?,Cậu,6,null,1,quả măng cụt,5,reducion,2020-10-12 09:36:38.649177,2020-10-12 09:36:38.649177
+Dũng có 9 trái bóng bàn. Dũng bị mất 8 trái bóng bàn . Hỏi Dũng còn bao nhiêu trái bóng bàn?,Dũng,9,null,8,trái bóng bàn,1,reducion,2020-10-12 09:36:38.653199,2020-10-12 09:36:38.653199
+Linh có 3 cây thước. Linh mua thêm 6 cây thước nữa. Hỏi Linh có bao nhiêu cây thước?,Linh,3,null,6,cây thước,9,increase,2020-10-12 09:36:38.657188,2020-10-12 09:36:38.658185
+Bé An có 6 cái bánh mặn. Bé An tìm được 6 cái bánh mặn nữa. Hỏi Bé An có bao nhiêu cái bánh mặn?,Bé An,6,null,6,cái bánh mặn,12,increase,2020-10-12 09:36:38.661177,2020-10-12 09:36:38.662176
+Bác có 4 quả măng cụt. Bác đưa 2 quả măng cụt cho Thầy giáo. Hỏi Bác còn bao nhiêu quả măng cụt?,Bác,4,Thầy giáo,2,quả măng cụt,2,change_out,2020-10-12 09:36:38.666164,2020-10-12 09:36:38.666164
+Chú có 9 quả dâu. Chú nhận được 7 quả dâu từ Cô giáo. Hỏi Chú có bao nhiêu quả dâu?,Chú,9,Cô giáo,7,quả dâu,16,change_in,2020-10-12 09:36:38.670154,2020-10-12 09:36:38.670154
+Cậu có 3 cây thước. Cậu lấy được 4 cây thước từ Cô. Hỏi Cậu có bao nhiêu cây thước?,Cậu,3,Cô,4,cây thước,7,change_in,2020-10-12 09:36:38.674142,2020-10-12 09:36:38.674142
+Cô có 7 cái bánh mặn. Cô cho 3 cái bánh mặn cho Ngạn. Hỏi Cô còn bao nhiêu cái bánh mặn?,Cô,7,Ngạn,3,cái bánh mặn,4,change_out,2020-10-12 09:36:38.678133,2020-10-12 09:36:38.678133
+Thầy giáo có 7 quả măng cụt. Thầy giáo tìm được 4 quả măng cụt nữa. Hỏi Thầy giáo có bao nhiêu quả măng cụt?,Thầy giáo,7,null,4,quả măng cụt,11,increase,2020-10-12 09:36:38.682121,2020-10-12 09:36:38.682121
+Chú có 8 trái bóng bàn. Chú nhận thêm 5 trái bóng bàn nữa. Hỏi Chú có bao nhiêu trái bóng bàn?,Chú,8,null,5,trái bóng bàn,13,increase,2020-10-12 09:36:38.686111,2020-10-12 09:36:38.686111
+Dũng có 8 quả măng cụt. Dũng mượn 2 quả măng cụt từ Dì. Hỏi Dũng có bao nhiêu quả măng cụt?,Dũng,8,Dì,2,quả măng cụt,10,change_in,2020-10-12 09:36:38.690100,2020-10-12 09:36:38.690100
+Cậu có 4 quả măng cụt. Cậu tìm thấy 7 quả măng cụt nữa. Hỏi Cậu có bao nhiêu quả măng cụt?,Cậu,4,null,7,quả măng cụt,11,increase,2020-10-12 09:36:38.694090,2020-10-12 09:36:38.694090
+Dì có 4 quyển tự sự. Dì bỏ đi 3 quyển tự sự . Hỏi Dì còn bao nhiêu quyển tự sự?,Dì,4,null,3,quyển tự sự,1,reducion,2020-10-12 09:36:38.698079,2020-10-12 09:36:38.699049
+Bé An có 3 cây thước. Bé An phân phát 3 cây thước cho Ngọc. Hỏi Bé An còn bao nhiêu cây thước?,Bé An,3,Ngọc,3,cây thước,0,change_out,2020-10-12 09:36:38.702068,2020-10-12 09:36:38.703066
+Ngạn có 10 cái bánh mặn. Dũng có 5 cái bánh mặn . Hỏi Ngạn và Dũng có cùng nhau bao nhiêu cái bánh mặn?,Ngạn,10,Dũng,5,cái bánh mặn,15,combine,2020-10-12 09:36:38.706058,2020-10-12 09:36:38.707055
+David có 4 trái bóng bàn. Cô giáo có 9 trái bóng bàn . Hỏi David và Cô giáo có cùng nhau bao nhiêu trái bóng bàn?,David,4,Cô giáo,9,trái bóng bàn,13,combine,2020-10-12 09:36:38.711044,2020-10-12 09:36:38.711044
+Linh có 2 cây thước. Linh nhận được 2 cây thước từ Mai. Hỏi Linh có bao nhiêu cây thước?,Linh,2,Mai,2,cây thước,4,change_in,2020-10-12 09:36:38.715034,2020-10-12 09:36:38.715034
+Mình có 7 quả dâu. Mình đặt xuống 1 quả dâu . Hỏi Mình còn bao nhiêu quả dâu?,Mình,7,null,1,quả dâu,6,reducion,2020-10-12 09:36:38.719023,2020-10-12 09:36:38.719023
+Bác có 6 quả măng cụt. Bác mua 4 quả măng cụt từ Bé An. Hỏi Bác có bao nhiêu quả măng cụt?,Bác,6,Bé An,4,quả măng cụt,10,change_in,2020-10-12 09:36:38.723012,2020-10-12 09:36:38.723012
+Cô giáo có 7 cái bánh ngọt. Cô giáo đặt xuống 7 cái bánh ngọt . Hỏi Cô giáo còn bao nhiêu cái bánh ngọt?,Cô giáo,7,null,7,cái bánh ngọt,0,reducion,2020-10-12 09:36:38.727003,2020-10-12 09:36:38.727003
+Ngọc có 10 quả dâu. Ngọc đưa 9 quả dâu cho David. Hỏi Ngọc còn bao nhiêu quả dâu?,Ngọc,10,David,9,quả dâu,1,change_out,2020-10-12 09:36:38.730991,2020-10-12 09:36:38.730991
+Dì có 4 cái bánh mặn. Dì nhận được 3 cái bánh mặn từ Bác. Hỏi Dì có bao nhiêu cái bánh mặn?,Dì,4,Bác,3,cái bánh mặn,7,change_in,2020-10-12 09:36:38.734980,2020-10-12 09:36:38.734980
+Cô có 7 trái bóng rổ. Cô bị mất 7 trái bóng rổ . Hỏi Cô còn bao nhiêu trái bóng rổ?,Cô,7,null,7,trái bóng rổ,0,reducion,2020-10-12 09:36:38.738969,2020-10-12 09:36:38.739968
+Mai có 3 quyển vở. Mai có thêm 4 quyển vở nữa. Hỏi Mai có bao nhiêu quyển vở?,Mai,3,null,4,quyển vở,7,increase,2020-10-12 09:36:38.742959,2020-10-12 09:36:38.743957
+Mình có 4 trái bóng bàn. Mình nhận được 6 trái bóng bàn từ Chị Xuân. Hỏi Mình có bao nhiêu trái bóng bàn?,Mình,4,Chị Xuân,6,trái bóng bàn,10,change_in,2020-10-12 09:36:38.746948,2020-10-12 09:36:38.747948
+Cô giáo có 6 trái bóng bàn. Chú có 8 trái bóng bàn . Hỏi Cô giáo và Chú có cùng nhau bao nhiêu trái bóng bàn?,Cô giáo,6,Chú,8,trái bóng bàn,14,combine,2020-10-12 09:36:38.750937,2020-10-12 09:36:38.751934
+Linh có 6 quyển tự sự. Chú có 4 quyển tự sự . Hỏi Linh và Chú có cùng nhau bao nhiêu quyển tự sự?,Linh,6,Chú,4,quyển tự sự,10,combine,2020-10-12 09:36:38.755921,2020-10-12 09:36:38.755921
+Jenny có 2 cái bánh mặn. Chị Xuân có 2 cái bánh mặn . Hỏi Jenny và Chị Xuân có cùng nhau bao nhiêu cái bánh mặn?,Jenny,2,Chị Xuân,2,cái bánh mặn,4,combine,2020-10-12 09:36:38.759912,2020-10-12 09:36:38.760908
+Dũng có 9 quả dâu. Dũng mua thêm 4 quả dâu nữa. Hỏi Dũng có bao nhiêu quả dâu?,Dũng,9,null,4,quả dâu,13,increase,2020-10-12 09:36:38.764901,2020-10-12 09:36:38.764901
+David có 9 quả dưa. David ăn mất 8 quả dưa . Hỏi David còn bao nhiêu quả dưa?,David,9,null,8,quả dưa,1,reducion,2020-10-12 09:36:38.768891,2020-10-12 09:36:38.768891
+Mình có 10 quả dưa. Mình lấy được 2 quả dưa từ Dũng. Hỏi Mình có bao nhiêu quả dưa?,Mình,10,Dũng,2,quả dưa,12,change_in,2020-10-12 09:36:38.772878,2020-10-12 09:36:38.772878
+Bé An có 1 cái bánh mặn. Bé An nhặt được 9 cái bánh mặn nữa. Hỏi Bé An có bao nhiêu cái bánh mặn?,Bé An,1,null,9,cái bánh mặn,10,increase,2020-10-12 09:36:38.776868,2020-10-12 09:36:38.776868
+Bé An có 10 quả quýt. Bé An tặng 2 quả quýt cho Cô giáo. Hỏi Bé An còn bao nhiêu quả quýt?,Bé An,10,Cô giáo,2,quả quýt,8,change_out,2020-10-12 09:36:38.780858,2020-10-12 09:36:38.780858
+Linh có 4 cái bánh mặn. Linh mua thêm 5 cái bánh mặn nữa. Hỏi Linh có bao nhiêu cái bánh mặn?,Linh,4,null,5,cái bánh mặn,9,increase,2020-10-12 09:36:38.784847,2020-10-12 09:36:38.784847
+Thầy giáo có 1 cái bánh mặn. Thầy giáo đưa 1 cái bánh mặn cho Cháu. Hỏi Thầy giáo còn bao nhiêu cái bánh mặn?,Thầy giáo,1,Cháu,1,cái bánh mặn,0,change_out,2020-10-12 09:36:38.788836,2020-10-12 09:36:38.788836
+Jenny có 3 cái bánh ngọt. Chú có 8 cái bánh ngọt . Hỏi Jenny và Chú có tổng cộng bao nhiêu cái bánh ngọt?,Jenny,3,Chú,8,cái bánh ngọt,11,combine,2020-10-12 09:36:38.792825,2020-10-12 09:36:38.793823
+Cậu có 7 quả quýt. Cháu có 6 quả quýt . Hỏi Cậu và Cháu có cùng nhau bao nhiêu quả quýt?,Cậu,7,Cháu,6,quả quýt,13,combine,2020-10-12 09:36:38.797812,2020-10-12 09:36:38.797812
+Cô có 6 trái bóng bàn. Cô bỏ đi 1 trái bóng bàn . Hỏi Cô còn bao nhiêu trái bóng bàn?,Cô,6,null,1,trái bóng bàn,5,reducion,2020-10-12 09:36:38.801802,2020-10-12 09:36:38.801802
+Cô giáo có 9 quyển vở. Cô giáo mua 6 quyển vở từ Thầy giáo. Hỏi Cô giáo có bao nhiêu quyển vở?,Cô giáo,9,Thầy giáo,6,quyển vở,15,change_in,2020-10-12 09:36:38.805791,2020-10-12 09:36:38.805791
+Chị Xuân có 5 trái bóng bàn. Chị Xuân sử dụng 1 trái bóng bàn . Hỏi Chị Xuân còn bao nhiêu trái bóng bàn?,Chị Xuân,5,null,1,trái bóng bàn,4,reducion,2020-10-12 09:36:38.809780,2020-10-12 09:36:38.809780
+Linh có 7 cái bánh ngọt. Linh bị mất 1 cái bánh ngọt . Hỏi Linh còn bao nhiêu cái bánh ngọt?,Linh,7,null,1,cái bánh ngọt,6,reducion,2020-10-12 09:36:38.813768,2020-10-12 09:36:38.813768
+Linh có 3 quả măng cụt. Linh tặng 3 quả măng cụt cho Chú. Hỏi Linh còn bao nhiêu quả măng cụt?,Linh,3,Chú,3,quả măng cụt,0,change_out,2020-10-12 09:36:38.817759,2020-10-12 09:36:38.818756
+Ngọc có 3 quả măng cụt. Ngọc mua thêm 8 quả măng cụt nữa. Hỏi Ngọc có bao nhiêu quả măng cụt?,Ngọc,3,null,8,quả măng cụt,11,increase,2020-10-12 09:36:38.821747,2020-10-12 09:36:38.821747
+Ngạn có 10 quả dâu. Ngạn bán 1 quả dâu cho Cô. Hỏi Ngạn còn bao nhiêu quả dâu?,Ngạn,10,Cô,1,quả dâu,9,change_out,2020-10-12 09:36:38.826735,2020-10-12 09:36:38.826735
+Cô có 7 quyển vở. Cô đưa 3 quyển vở cho Linh. Hỏi Cô còn bao nhiêu quyển vở?,Cô,7,Linh,3,quyển vở,4,change_out,2020-10-12 09:36:38.830724,2020-10-12 09:36:38.830724
+Thầy giáo có 4 cái bánh ngọt. Linh có 6 cái bánh ngọt . Hỏi Thầy giáo và Linh có cùng nhau bao nhiêu cái bánh ngọt?,Thầy giáo,4,Linh,6,cái bánh ngọt,10,combine,2020-10-12 09:36:38.834713,2020-10-12 09:36:38.834713
+Ngọc có 6 quả dâu. Ngọc tặng 3 quả dâu cho Bác. Hỏi Ngọc còn bao nhiêu quả dâu?,Ngọc,6,Bác,3,quả dâu,3,change_out,2020-10-12 09:36:38.840701,2020-10-12 09:36:38.840701
+Cậu có 6 cái bánh mặn. David có 5 cái bánh mặn . Hỏi Cậu và David có cùng nhau bao nhiêu cái bánh mặn?,Cậu,6,David,5,cái bánh mặn,11,combine,2020-10-12 09:36:38.845681,2020-10-12 09:36:38.845681
+Ngạn có 5 trái bóng rổ. Ngạn nhận thêm 4 trái bóng rổ nữa. Hỏi Ngạn có bao nhiêu trái bóng rổ?,Ngạn,5,null,4,trái bóng rổ,9,increase,2020-10-12 09:36:38.849668,2020-10-12 09:36:38.850666
+David có 4 quả măng cụt. David nhặt được 5 quả măng cụt nữa. Hỏi David có bao nhiêu quả măng cụt?,David,4,null,5,quả măng cụt,9,increase,2020-10-12 09:36:38.854655,2020-10-12 09:36:38.854655
+Dũng có 9 cái bánh mặn. Ngọc có 9 cái bánh mặn . Hỏi Dũng và Ngọc có tổng cộng bao nhiêu cái bánh mặn?,Dũng,9,Ngọc,9,cái bánh mặn,18,combine,2020-10-12 09:36:38.861609,2020-10-12 09:36:38.861609
+Mai có 7 quả măng cụt. Mai nhận thêm 7 quả măng cụt nữa. Hỏi Mai có bao nhiêu quả măng cụt?,Mai,7,null,7,quả măng cụt,14,increase,2020-10-12 09:36:38.866624,2020-10-12 09:36:38.866624
+Cô có 7 cây thước. Cô bị mất 1 cây thước . Hỏi Cô còn bao nhiêu cây thước?,Cô,7,null,1,cây thước,6,reducion,2020-10-12 09:36:38.870612,2020-10-12 09:36:38.870612
+Cậu có 9 trái bóng rổ. Cậu mượn 4 trái bóng rổ từ Thầy giáo. Hỏi Cậu có bao nhiêu trái bóng rổ?,Cậu,9,Thầy giáo,4,trái bóng rổ,13,change_in,2020-10-12 09:36:38.874602,2020-10-12 09:36:38.874602
+Cháu có 7 quyển tự sự. Cháu nhận được 9 quyển tự sự từ Cô giáo. Hỏi Cháu có bao nhiêu quyển tự sự?,Cháu,7,Cô giáo,9,quyển tự sự,16,change_in,2020-10-12 09:36:38.879588,2020-10-12 09:36:38.879588
+Bác có 1 quả quýt. Bác tặng 1 quả quýt cho Chú. Hỏi Bác còn bao nhiêu quả quýt?,Bác,1,Chú,1,quả quýt,0,change_out,2020-10-12 09:36:38.884578,2020-10-12 09:36:38.885573
+Chị Xuân có 7 cái bánh ngọt. Mai có 1 cái bánh ngọt . Hỏi Chị Xuân và Mai có cùng nhau bao nhiêu cái bánh ngọt?,Chị Xuân,7,Mai,1,cái bánh ngọt,8,combine,2020-10-12 09:36:38.889562,2020-10-12 09:36:38.889562
+Mai có 9 cái bánh mặn. Mai tìm được 5 cái bánh mặn nữa. Hỏi Mai có bao nhiêu cái bánh mặn?,Mai,9,null,5,cái bánh mặn,14,increase,2020-10-12 09:36:38.893551,2020-10-12 09:36:38.893551
+Linh có 6 quyển tự sự. Linh cho 1 quyển tự sự cho Thầy giáo. Hỏi Linh còn bao nhiêu quyển tự sự?,Linh,6,Thầy giáo,1,quyển tự sự,5,change_out,2020-10-12 09:36:38.897541,2020-10-12 09:36:38.897541
+Cháu có 5 trái bóng bàn. Cháu lấy được 6 trái bóng bàn từ Mình. Hỏi Cháu có bao nhiêu trái bóng bàn?,Cháu,5,Mình,6,trái bóng bàn,11,change_in,2020-10-12 09:36:38.902520,2020-10-12 09:36:38.903518
+Cháu có 5 cái bánh mặn. Cháu mượn 9 cái bánh mặn từ Mai. Hỏi Cháu có bao nhiêu cái bánh mặn?,Cháu,5,Mai,9,cái bánh mặn,14,change_in,2020-10-12 09:36:38.907508,2020-10-12 09:36:38.907508
+Bé An có 3 trái bóng rổ. Bé An tặng 2 trái bóng rổ cho Cháu. Hỏi Bé An còn bao nhiêu trái bóng rổ?,Bé An,3,Cháu,2,trái bóng rổ,1,change_out,2020-10-12 09:36:38.911504,2020-10-12 09:36:38.911504
+Dì có 6 quyển vở. Dì phân phát 5 quyển vở cho Cô. Hỏi Dì còn bao nhiêu quyển vở?,Dì,6,Cô,5,quyển vở,1,change_out,2020-10-12 09:36:38.915503,2020-10-12 09:36:38.915503
+Chú có 3 cây thước. Chú mượn 10 cây thước từ Bé An. Hỏi Chú có bao nhiêu cây thước?,Chú,3,Bé An,10,cây thước,13,change_in,2020-10-12 09:36:38.919486,2020-10-12 09:36:38.919486
+Chị Xuân có 10 cây thước. Chị Xuân mượn 6 cây thước từ Ngọc. Hỏi Chị Xuân có bao nhiêu cây thước?,Chị Xuân,10,Ngọc,6,cây thước,16,change_in,2020-10-12 09:36:38.923478,2020-10-12 09:36:38.924473
+Cô giáo có 4 trái bóng bàn. Cô giáo có thêm 3 trái bóng bàn nữa. Hỏi Cô giáo có bao nhiêu trái bóng bàn?,Cô giáo,4,null,3,trái bóng bàn,7,increase,2020-10-12 09:36:38.928460,2020-10-12 09:36:38.928460
+Ngọc có 6 quyển vở. Ngạn có 8 quyển vở . Hỏi Ngọc và Ngạn có tổng cộng bao nhiêu quyển vở?,Ngọc,6,Ngạn,8,quyển vở,14,combine,2020-10-12 09:36:38.932420,2020-10-12 09:36:38.932420
+Mai có 7 quyển tự sự. Cậu có 8 quyển tự sự . Hỏi Mai và Cậu có tổng cộng bao nhiêu quyển tự sự?,Mai,7,Cậu,8,quyển tự sự,15,combine,2020-10-12 09:36:38.936439,2020-10-12 09:36:38.936439
+Cô giáo có 1 quả dưa. Cô giáo ăn mất 1 quả dưa . Hỏi Cô giáo còn bao nhiêu quả dưa?,Cô giáo,1,null,1,quả dưa,0,reducion,2020-10-12 09:36:38.941423,2020-10-12 09:36:38.941423
+Cháu có 10 quyển vở. Cô có 3 quyển vở . Hỏi Cháu và Cô có tổng cộng bao nhiêu quyển vở?,Cháu,10,Cô,3,quyển vở,13,combine,2020-10-12 09:36:38.945419,2020-10-12 09:36:38.945419
+Jenny có 6 quyển vở. Jenny lấy được 8 quyển vở từ Cô giáo. Hỏi Jenny có bao nhiêu quyển vở?,Jenny,6,Cô giáo,8,quyển vở,14,change_in,2020-10-12 09:36:38.949406,2020-10-12 09:36:38.949406
+Bé An có 8 quyển tự sự. Mai có 10 quyển tự sự . Hỏi Bé An và Mai có cùng nhau bao nhiêu quyển tự sự?,Bé An,8,Mai,10,quyển tự sự,18,combine,2020-10-12 09:36:38.953397,2020-10-12 09:36:38.953397
+Ngạn có 5 quả dâu. Ngạn tìm được 7 quả dâu nữa. Hỏi Ngạn có bao nhiêu quả dâu?,Ngạn,5,null,7,quả dâu,12,increase,2020-10-12 09:36:38.957381,2020-10-12 09:36:38.957381
+Bác có 7 cái bánh ngọt. Bác tặng 5 cái bánh ngọt cho Chú. Hỏi Bác còn bao nhiêu cái bánh ngọt?,Bác,7,Chú,5,cái bánh ngọt,2,change_out,2020-10-12 09:36:38.961370,2020-10-12 09:36:38.962367
+Linh có 8 quả dâu. Linh bị mất 5 quả dâu . Hỏi Linh còn bao nhiêu quả dâu?,Linh,8,null,5,quả dâu,3,reducion,2020-10-12 09:36:38.966361,2020-10-12 09:36:38.966361
+Thầy giáo có 10 quyển tự sự. Mình có 1 quyển tự sự . Hỏi Thầy giáo và Mình có tổng cộng bao nhiêu quyển tự sự?,Thầy giáo,10,Mình,1,quyển tự sự,11,combine,2020-10-12 09:36:38.970350,2020-10-12 09:36:38.970350
+Bác có 7 quả quýt. Bác đặt xuống 1 quả quýt . Hỏi Bác còn bao nhiêu quả quýt?,Bác,7,null,1,quả quýt,6,reducion,2020-10-12 09:36:38.974340,2020-10-12 09:36:38.974340
+Bé An có 4 quả quýt. Bé An đặt xuống 3 quả quýt . Hỏi Bé An còn bao nhiêu quả quýt?,Bé An,4,null,3,quả quýt,1,reducion,2020-10-12 09:36:38.978329,2020-10-12 09:36:38.978329
+Bác có 6 trái bóng bàn. Bác bỏ đi 1 trái bóng bàn . Hỏi Bác còn bao nhiêu trái bóng bàn?,Bác,6,null,1,trái bóng bàn,5,reducion,2020-10-12 09:36:38.982306,2020-10-12 09:36:38.983315
+Dũng có 2 quả dâu. Dũng mua 1 quả dâu từ Ngọc. Hỏi Dũng có bao nhiêu quả dâu?,Dũng,2,Ngọc,1,quả dâu,3,change_in,2020-10-12 09:36:38.987302,2020-10-12 09:36:38.987302
+Chú có 4 quyển tự sự. Chú nhận được 6 quyển tự sự từ Cậu. Hỏi Chú có bao nhiêu quyển tự sự?,Chú,4,Cậu,6,quyển tự sự,10,change_in,2020-10-12 09:36:38.991290,2020-10-12 09:36:38.991290
+Cô giáo có 7 quyển vở. Cô giáo tặng 7 quyển vở cho Dũng. Hỏi Cô giáo còn bao nhiêu quyển vở?,Cô giáo,7,Dũng,7,quyển vở,0,change_out,2020-10-12 09:36:38.995286,2020-10-12 09:36:38.995286
+Cô có 9 cái bánh ngọt. Cô nhận được 4 cái bánh ngọt từ Bác. Hỏi Cô có bao nhiêu cái bánh ngọt?,Cô,9,Bác,4,cái bánh ngọt,13,change_in,2020-10-12 09:36:38.999273,2020-10-12 09:36:38.999273
+Linh có 3 cây thước. Linh mượn 4 cây thước từ Ngọc. Hỏi Linh có bao nhiêu cây thước?,Linh,3,Ngọc,4,cây thước,7,change_in,2020-10-12 09:36:39.003264,2020-10-12 09:36:39.003264
+Chú có 3 cây thước. Chú đưa 3 cây thước cho Thầy giáo. Hỏi Chú còn bao nhiêu cây thước?,Chú,3,Thầy giáo,3,cây thước,0,change_out,2020-10-12 09:36:39.007253,2020-10-12 09:36:39.007253
+Mình có 5 quả dâu. Mình mượn 7 quả dâu từ Cô. Hỏi Mình có bao nhiêu quả dâu?,Mình,5,Cô,7,quả dâu,12,change_in,2020-10-12 09:36:39.011243,2020-10-12 09:36:39.011243
+Dì có 2 quả quýt. Ngọc có 7 quả quýt . Hỏi Dì và Ngọc có cùng nhau bao nhiêu quả quýt?,Dì,2,Ngọc,7,quả quýt,9,combine,2020-10-12 09:36:39.015231,2020-10-12 09:36:39.016228
+Chị Xuân có 6 quyển tự sự. Chị Xuân tìm được 9 quyển tự sự nữa. Hỏi Chị Xuân có bao nhiêu quyển tự sự?,Chị Xuân,6,null,9,quyển tự sự,15,increase,2020-10-12 09:36:39.020217,2020-10-12 09:36:39.020217
+Chú có 6 quả dâu. Chú mua 1 quả dâu từ Bé An. Hỏi Chú có bao nhiêu quả dâu?,Chú,6,Bé An,1,quả dâu,7,change_in,2020-10-12 09:36:39.024206,2020-10-12 09:36:39.024206

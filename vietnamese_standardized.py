@@ -12,11 +12,15 @@ bang_nguyen_am = [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
                   ['u', 'ù', 'ú', 'ủ', 'ũ', 'ụ', 'u'],
                   ['ư', 'ừ', 'ứ', 'ử', 'ữ', 'ự', 'uw'],
                   ['y', 'ỳ', 'ý', 'ỷ', 'ỹ', 'ỵ', 'y']]
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 bang_ky_tu_dau = ['', 'f', 's', 'r', 'x', 'j']
 
 nguyen_am_to_ids = {}
 
+<<<<<<< Updated upstream
 for i in range(len(bang_nguyen_am)):
     for j in range(len(bang_nguyen_am[i]) - 1):
         nguyen_am_to_ids[bang_nguyen_am[i][j]] = (i, j)
@@ -63,6 +67,8 @@ def is_valid_vietnam_word(word):
                 nguyen_am_index = index
     return True
 
+=======
+>>>>>>> Stashed changes
 def chuan_hoa_dau_tu_tieng_viet(word):
     if not is_valid_vietnam_word(word):
         return word

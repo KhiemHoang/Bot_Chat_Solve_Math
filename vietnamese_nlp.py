@@ -2,6 +2,13 @@ import regex as re
 import pandas as pd
 from vncorenlp import VnCoreNLP
 import vietnamese_standardized as vnstandard
+import gensim
+
+annotator_pos = VnCoreNLP("VnCoreNLP\VnCoreNLP-1.1.1.jar", annotators="wseg, pos", max_heap_size='-Xmx2g')
+
+
+uniChars = "àáảãạâầấẩẫậăằắẳẵặèéẻẽẹêềếểễệđìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵÀÁẢÃẠÂẦẤẨẪẬĂẰẮẲẴẶÈÉẺẼẸÊỀẾỂỄỆĐÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴÂĂĐÔƠƯ"
+unsignChars = "aaaaaaaaaaaaaaaaaeeeeeeeeeeediiiiiooooooooooooooooouuuuuuuuuuuyyyyyAAAAAAAAAAAAAAAAAEEEEEEEEEEEDIIIOOOOOOOOOOOOOOOOOOOUUUUUUUUUUUYYYYYAADOOU"
 
 def loaddicchar():
     dic = {}
@@ -27,3 +34,23 @@ def postagging_for_text(annotator, text):
     s1 = s1.fillna('null value')
     s1.columns = s1.columns.map(str)
     return s1
+
+def pre_process_train_data(annotator,df_input):
+    X = []
+    y = []
+
+    for text in df_input['problem'].head(2):
+        text = covert_unicode(text)
+        text = vnstandard.chuan_hoa_dau_cau_tieng_viet(text)
+        text = gensim.utils.simple_preprocess(text)
+        text = ' '.join(text)
+            
+        #code to understand
+        str1 = ""
+        s1 = annotator.tokenize(text)
+        str1 = ' '.join(map(lambda a:' '.join(map(str, a)), s1))
+        X.append(str1.strip())
+
+    for text in df_input['problem_type']:
+        y.append(text)
+    return X, y
