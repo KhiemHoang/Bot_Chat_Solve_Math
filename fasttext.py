@@ -6,43 +6,53 @@ from vncorenlp import VnCoreNLP
 from gensim.models.fasttext import FastText
 import pandas as pd
 from string import punctuation
-import text_preprocess
+from vietnamese_standardized import text_preprocess
 
-vncorenlp_file = "E:/thesis/code/fasttext_model/VnCoreNLP-1.1.1.jar"
+vncorenlp_file = "E:/thesis/code/Bot_Chat_Solve_Math/VnCoreNLP-1.1.1.jar"
 
-test_data = """
-TP HCM phạt người không đeo khẩu trang nơi công cộng
-Người dân ở thành phố không đeo khẩu trang nơi công cộng sẽ bị xử phạt mức cao nhất 300.000 đồng, từ ngày 5/8.
+test_data = open('E:/thesis/code/Bot_Chat_Solve_Math/test_data.txt')
 
-Yêu cầu này được Chủ tịch UBND thành phố Nguyễn Thành Phong đưa ra tại cuộc họp Ban chỉ đạo phòng chống dịch bệnh Covid-19 của TP HCM chiều 3/8.
+data = test_data.read()
 
-Việc xử phạt không đeo khẩu trang nơi công cộng được TP HCM cũng như các địa phương khác thực hiện từ cuối tháng 3 khi Covid-19 bùng phát. Tuy nhiên, sau khi hết thực hiện cách ly xã hội từ ngày 23/4, việc đeo khẩu trang nơi công cộng chỉ dừng lại ở mức khuyến cáo.
+data_processed = text_preprocess(data)
 
-Theo Nghị định số 176/2013, người dân không đeo khẩu trang nơi công cộng sẽ bị xử phạt từ 100.000 đến 300.000 đồng. Trong khoảng một tháng áp dụng trước đó, TP HCM đã xử phạt hơn 4.300 trường hợp với gần 870 triệu đồng.
+test_data.write(data_processed)
 
-Theo ông Phong, việc đeo khẩu trang đã được khẳng định có thể tránh lây lan dịch bệnh cho người khác và bảo vệ sức khỏe cho người sử dụng. "Sở Công thương phải nắm nguồn cung ứng khẩu trang, chủ động thông báo các điểm bán để người dân dễ dàng mua vì đã xử phạt thì phải bảo đảm đủ nguồn cung", ông Phong nói.
+test_data.close()
 
-Đội trật tự đô thị phường Bến Nghé, quận 1, xử phạt người không đeo khẩu trang trên phố đi bộ Nguyễn Huệ, chiều 15/4. Ảnh: Quỳnh Trần.
-Đội trật tự đô thị phường Bến Nghé, quận 1, xử phạt người không đeo khẩu trang trên phố đi bộ Nguyễn Huệ, chiều 15/4. Ảnh: Quỳnh Trần.
+# test_data = """
+# TP HCM phạt người không đeo khẩu trang nơi công cộng
+# Người dân ở thành phố không đeo khẩu trang nơi công cộng sẽ bị xử phạt mức cao nhất 300.000 đồng, từ ngày 5/8.
 
-Bí thư Thành uỷ Nguyễn Thiện Nhân cũng cho rằng việc đeo khẩu trang là một trong những biện pháp cơ bản để tránh dịch bệnh lây lan. Việc này rất dễ làm, không tốn nhiều tiền nhưng nhiều nước bỏ lơi và đã bị "vỡ trận".
+# Yêu cầu này được Chủ tịch UBND thành phố Nguyễn Thành Phong đưa ra tại cuộc họp Ban chỉ đạo phòng chống dịch bệnh Covid-19 của TP HCM chiều 3/8.
 
-"Ngoài đường hiện có ít nhất 20% người không đeo khẩu trang. Người không đeo không những tự rước bệnh vào mình mà còn nguy cơ lây cho người khác. Đeo khẩu trang hơi cực tí thôi nhưng đi đâu cũng nên đeo để giữ an toàn", ông Nhân nói và khẳng định thành phố bảo đảm không thiếu khẩu trang cho người dân.
+# Việc xử phạt không đeo khẩu trang nơi công cộng được TP HCM cũng như các địa phương khác thực hiện từ cuối tháng 3 khi Covid-19 bùng phát. Tuy nhiên, sau khi hết thực hiện cách ly xã hội từ ngày 23/4, việc đeo khẩu trang nơi công cộng chỉ dừng lại ở mức khuyến cáo.
 
-Chủ tịch UBND thành phố Nguyễn Thành Phong cũng cho biết đã đồng ý việc tái lập các chốt kiểm soát ở cửa ngõ TP HCM để phòng chống Covid-19.
+# Theo Nghị định số 176/2013, người dân không đeo khẩu trang nơi công cộng sẽ bị xử phạt từ 100.000 đến 300.000 đồng. Trong khoảng một tháng áp dụng trước đó, TP HCM đã xử phạt hơn 4.300 trường hợp với gần 870 triệu đồng.
 
-Trước đó, thành phố đã lập 62 chốt kiểm soát, hoạt động 24/24 từ ngày 4/4 để phòng chống dịch. Lực lượng tham gia là Công an thành phố, Sở Y tế, Bộ Tư lệnh thành phố, Thanh tra giao thông, Ban Quản lý An toàn thực phẩm, quản lý thị trường.
+# Theo ông Phong, việc đeo khẩu trang đã được khẳng định có thể tránh lây lan dịch bệnh cho người khác và bảo vệ sức khỏe cho người sử dụng. "Sở Công thương phải nắm nguồn cung ứng khẩu trang, chủ động thông báo các điểm bán để người dân dễ dàng mua vì đã xử phạt thì phải bảo đảm đủ nguồn cung", ông Phong nói.
 
-Trong đó, 16 chốt chính (cấp thành phố) đặt tại: Trạm thu phí Long Phước (cao tốc TP HCM - Long Thành - Dầu Giây), cao tốc Trung Lương, cầu Đôi (đường Trần Văn Giàu), đường Ba Làng, đường Xuyên Á (quốc lộ 22), cầu Phú Cường, cầu Vĩnh Bình, cầu vượt Sóng Thần, quốc lộ 1K, quốc lộ 50, quốc lộ 1A, cầu Đồng Nai, Bến xe Miền Tây, Bến xe miền Đông, sân bay Tân Sơn Nhất, cảng Cát Lái.
+# Đội trật tự đô thị phường Bến Nghé, quận 1, xử phạt người không đeo khẩu trang trên phố đi bộ Nguyễn Huệ, chiều 15/4. Ảnh: Quỳnh Trần.
+# Đội trật tự đô thị phường Bến Nghé, quận 1, xử phạt người không đeo khẩu trang trên phố đi bộ Nguyễn Huệ, chiều 15/4. Ảnh: Quỳnh Trần.
 
-Đến ngày 23/4, chính quyền thành phố dừng hoạt động các chốt này vì dịch bệnh đã được khống chế, TP HCM dừng cách ly xã hội theo Chỉ thị 19 của Thủ tướng.
+# Bí thư Thành uỷ Nguyễn Thiện Nhân cũng cho rằng việc đeo khẩu trang là một trong những biện pháp cơ bản để tránh dịch bệnh lây lan. Việc này rất dễ làm, không tốn nhiều tiền nhưng nhiều nước bỏ lơi và đã bị "vỡ trận".
 
-Sau 19 ngày hoạt động, các chốt chính đã kiểm tra gần 270.000 xe, trong đó có 235.000 ôtô; gần 600.000 người được kiểm tra y tế, đo thân nhiệt, bao gồm cả 3.000 người nước ngoài; hơn 130.000 người được yêu cầu khai báo y tế.
-"""
-test_data_processed = text_preprocess(test_data)
+# "Ngoài đường hiện có ít nhất 20% người không đeo khẩu trang. Người không đeo không những tự rước bệnh vào mình mà còn nguy cơ lây cho người khác. Đeo khẩu trang hơi cực tí thôi nhưng đi đâu cũng nên đeo để giữ an toàn", ông Nhân nói và khẳng định thành phố bảo đảm không thiếu khẩu trang cho người dân.
+
+# Chủ tịch UBND thành phố Nguyễn Thành Phong cũng cho biết đã đồng ý việc tái lập các chốt kiểm soát ở cửa ngõ TP HCM để phòng chống Covid-19.
+
+# Trước đó, thành phố đã lập 62 chốt kiểm soát, hoạt động 24/24 từ ngày 4/4 để phòng chống dịch. Lực lượng tham gia là Công an thành phố, Sở Y tế, Bộ Tư lệnh thành phố, Thanh tra giao thông, Ban Quản lý An toàn thực phẩm, quản lý thị trường.
+
+# Trong đó, 16 chốt chính (cấp thành phố) đặt tại: Trạm thu phí Long Phước (cao tốc TP HCM - Long Thành - Dầu Giây), cao tốc Trung Lương, cầu Đôi (đường Trần Văn Giàu), đường Ba Làng, đường Xuyên Á (quốc lộ 22), cầu Phú Cường, cầu Vĩnh Bình, cầu vượt Sóng Thần, quốc lộ 1K, quốc lộ 50, quốc lộ 1A, cầu Đồng Nai, Bến xe Miền Tây, Bến xe miền Đông, sân bay Tân Sơn Nhất, cảng Cát Lái.
+
+# Đến ngày 23/4, chính quyền thành phố dừng hoạt động các chốt này vì dịch bệnh đã được khống chế, TP HCM dừng cách ly xã hội theo Chỉ thị 19 của Thủ tướng.
+
+# Sau 19 ngày hoạt động, các chốt chính đã kiểm tra gần 270.000 xe, trong đó có 235.000 ôtô; gần 600.000 người được kiểm tra y tế, đo thân nhiệt, bao gồm cả 3.000 người nước ngoài; hơn 130.000 người được yêu cầu khai báo y tế.
+# """
+
 
 corpus = []
-for i in test_data_processed:
+for i in data_processed:
     corpus.append(str(i).split(" "))
 corpus[:1]
 
@@ -50,3 +60,5 @@ corpus[:1]
 model = FastText(corpus, size=100, workers=4, window=5)
 
 print(np.shape(model['kiểm tra']))
+
+annotator.close()
