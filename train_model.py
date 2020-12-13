@@ -6,7 +6,7 @@ import pandas as pd
 def dump_file(annotator):
     # get data for testing
     df_test = pd.DataFrame()
-    df_test = pd.read_csv("data/test.csv")
+    df_test = pd.read_csv("data/test_data.csv")
     X_test, y_test = vnlp.pre_process_train_data(annotator, df_test)
     pickle.dump(X_test, open('data/X_test.pkl', 'wb'))
     pickle.dump(y_test, open('data/y_test.pkl', 'wb'))
