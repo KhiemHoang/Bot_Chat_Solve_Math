@@ -14,8 +14,7 @@ def dump_file(annotator):
     # get data for trainning
     df_train = pd.DataFrame()
     df_train = pd.read_csv("data/train_data.csv")
-    X_train, y_train = pre_process_train_data(annotator,df_train)
+    X_train, y_train = vnlp.pre_process_train_data(annotator,df_train)
     pickle.dump(X_train, open('data/X_train.pkl', 'wb'))
     pickle.dump(y_train, open('data/y_train.pkl', 'wb'))
 
-    

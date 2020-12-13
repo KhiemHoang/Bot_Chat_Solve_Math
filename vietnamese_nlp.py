@@ -36,7 +36,7 @@ def pre_process_train_data(annotator,df_input):
 
     for text in df_input['problem'].head(2):
         text = covert_unicode(text)
-        text = vnstandard.chuan_hoa_dau_cau_tieng_viet(text)
+        #text = vnstandard.chuan_hoa_dau_cau_tieng_viet(text)
         text = gensim.utils.simple_preprocess(text)
         text = ' '.join(text)
             

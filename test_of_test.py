@@ -4,7 +4,7 @@ import gensim
 def get_data(df_model):
     X = []
     y = []
-    for text in df_model['problem'].head(2):
+    for text in df_model['problem'].head:
         lines = text
         lines = gensim.utils.simple_preprocess(lines)
         lines = ' '.join(lines)
@@ -17,4 +17,4 @@ def get_data(df_model):
 
     #print(X)
     print(y)
-    # return X, y
+    return X, y
