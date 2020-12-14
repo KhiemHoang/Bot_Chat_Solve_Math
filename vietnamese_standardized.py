@@ -1,4 +1,7 @@
 import regex as re
+from vncorenlp import VnCoreNLP
+
+annotator = VnCoreNLP("E:/thesis/code/Bot_Chat_Solve_Math/VnCoreNLP-1.1.1.jar", annotators="wseg, pos", max_heap_size='-Xmx2g')
 
 bang_nguyen_am = [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
                   ['ă', 'ằ', 'ắ', 'ẳ', 'ẵ', 'ặ', 'aw'],
@@ -100,17 +103,18 @@ def chuan_hoa_dau_cau_tieng_viet(sentence):
 
 
 def text_preprocess(document):
-    with VnCoreNLP(vncorenlp_file) as vncorenlp:
-        # xóa html code
-        document = remove_html(document)
-        # chuẩn hóa unicode
-        document = convert_unicode(document)
-        # chuyển thành chữ thường
-        document.lower()
-        # chuẩn hóa cách gõ dấu tiếng Việt
-        document = chuan_hoa_dau_cau_tieng_viet(document)
-        # xóa các ký tự không cần thiết
-        document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
-        # tách từ
-        document = vncorenlp.tokenize(document)
+    # xóa html code
+    document = remove_html(document)
+    # chuẩn hóa unicode
+    document = convert_unicode(document)
+    # chuyển thành chữ thường
+    document.lower()
+    # chuẩn hóa cách gõ dấu tiếng Việt
+    document = chuan_hoa_dau_cau_tieng_viet(document)
+    # xóa các ký tự không cần thiết
+    document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
+    # tách từ
+    document = vncorenlp.tokenize(document)
     return document
+
+annotator.close()
