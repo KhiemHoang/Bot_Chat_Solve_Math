@@ -8,7 +8,7 @@ from string import punctuation
 from vietnamese_standardized import text_preprocess
 
 
-test_data = open('E:/thesis/code/Bot_Chat_Solve_Math/test_data.txt', encoding="utf8")
+test_data = open('test_data.txt', encoding="utf8")
 
 data = test_data.read()
 data_processed = text_preprocess(data)

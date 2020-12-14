@@ -33,6 +33,9 @@ def predict_math_type(annotator, text):
     
     # print (y_data_n)
     new_model = models.load_model('MyModel.h5')
-    a = new_model.predict(test_doc_svd)
-    #result = argmax(g(x))
-    print(a)
+    arr = new_model.predict(test_doc_svd)
+    arr = arr[0]
+    result = np.where(arr == np.amax(arr))
+    result = result[0]
+    print (arr)
+    print (result[0]) 
