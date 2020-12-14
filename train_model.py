@@ -84,7 +84,7 @@ def create_lstm_model():
     layer = Dense(512, activation='relu')(layer)
     layer = Dense(128, activation='relu')(layer)
     
-    output_layer = Dense(10, activation='softmax')(layer)
+    output_layer = Dense(5, activation='softmax')(layer)
     
     classifier = models.Model(input_layer, output_layer)
     

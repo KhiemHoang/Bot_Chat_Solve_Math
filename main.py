@@ -23,8 +23,8 @@ if __name__ == '__main__':
     # elif math_type == 'increase' or math_type == 'decrease':
     #     increase_decrease.solve_math_problem(annotator, text, math_type)
     
-    text = 'Chú có 1 quyển vở. Chú bị mất 1 quyển vở . Hỏi Chú còn bao nhiêu quyển vở?'
+    text = 'Juses có 100 cây gậy. Juses tìm được 50 cây gậy nữa. Hỏi số gậy mà Jesus có?'
     predict.predict_math_type(annotator, text)
-    # model.train_and_test(annotator)
+    #model.train_and_test()
 
     annotator.close()
