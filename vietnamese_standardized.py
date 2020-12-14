@@ -19,6 +19,52 @@ bang_ky_tu_dau = ['', 'f', 's', 'r', 'x', 'j']
 
 nguyen_am_to_ids = {}
 
+for i in range(len(bang_nguyen_am)):
+    for j in range(len(bang_nguyen_am[i]) - 1):
+        nguyen_am_to_ids[bang_nguyen_am[i][j]] = (i, j)
+
+
+def remove_html(txt):
+    return re.sub(r'<[^>]*>', '', txt)
+
+
+uniChars = "àáảãạâầấẩẫậăằắẳẵặèéẻẽẹêềếểễệđìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵÀÁẢÃẠÂẦẤẨẪẬĂẰẮẲẴẶÈÉẺẼẸÊỀẾỂỄỆĐÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴÂĂĐÔƠƯ"
+unsignChars = "aaaaaaaaaaaaaaaaaeeeeeeeeeeediiiiiooooooooooooooooouuuuuuuuuuuyyyyyAAAAAAAAAAAAAAAAAEEEEEEEEEEEDIIIOOOOOOOOOOOOOOOOOOOUUUUUUUUUUUYYYYYAADOOU"
+
+
+def loaddicchar():
+    dic = {}
+    char1252 = 'à|á|ả|ã|ạ|ầ|ấ|ẩ|ẫ|ậ|ằ|ắ|ẳ|ẵ|ặ|è|é|ẻ|ẽ|ẹ|ề|ế|ể|ễ|ệ|ì|í|ỉ|ĩ|ị|ò|ó|ỏ|õ|ọ|ồ|ố|ổ|ỗ|ộ|ờ|ớ|ở|ỡ|ợ|ù|ú|ủ|ũ|ụ|ừ|ứ|ử|ữ|ự|ỳ|ý|ỷ|ỹ|ỵ|À|Á|Ả|Ã|Ạ|Ầ|Ấ|Ẩ|Ẫ|Ậ|Ằ|Ắ|Ẳ|Ẵ|Ặ|È|É|Ẻ|Ẽ|Ẹ|Ề|Ế|Ể|Ễ|Ệ|Ì|Í|Ỉ|Ĩ|Ị|Ò|Ó|Ỏ|Õ|Ọ|Ồ|Ố|Ổ|Ỗ|Ộ|Ờ|Ớ|Ở|Ỡ|Ợ|Ù|Ú|Ủ|Ũ|Ụ|Ừ|Ứ|Ử|Ữ|Ự|Ỳ|Ý|Ỷ|Ỹ|Ỵ'.split(
+        '|')
+    charutf8 = "à|á|ả|ã|ạ|ầ|ấ|ẩ|ẫ|ậ|ằ|ắ|ẳ|ẵ|ặ|è|é|ẻ|ẽ|ẹ|ề|ế|ể|ễ|ệ|ì|í|ỉ|ĩ|ị|ò|ó|ỏ|õ|ọ|ồ|ố|ổ|ỗ|ộ|ờ|ớ|ở|ỡ|ợ|ù|ú|ủ|ũ|ụ|ừ|ứ|ử|ữ|ự|ỳ|ý|ỷ|ỹ|ỵ|À|Á|Ả|Ã|Ạ|Ầ|Ấ|Ẩ|Ẫ|Ậ|Ằ|Ắ|Ẳ|Ẵ|Ặ|È|É|Ẻ|Ẽ|Ẹ|Ề|Ế|Ể|Ễ|Ệ|Ì|Í|Ỉ|Ĩ|Ị|Ò|Ó|Ỏ|Õ|Ọ|Ồ|Ố|Ổ|Ỗ|Ộ|Ờ|Ớ|Ở|Ỡ|Ợ|Ù|Ú|Ủ|Ũ|Ụ|Ừ|Ứ|Ử|Ữ|Ự|Ỳ|Ý|Ỷ|Ỹ|Ỵ".split(
+        '|')
+    for i in range(len(char1252)):
+        dic[char1252[i]] = charutf8[i]
+    return dic
+
+
+# Đưa toàn bộ dữ liệu qua hàm này để chuẩn hóa lại
+def convert_unicode(txt):
+    dicchar = loaddicchar()
+    return re.sub(
+        r'à|á|ả|ã|ạ|ầ|ấ|ẩ|ẫ|ậ|ằ|ắ|ẳ|ẵ|ặ|è|é|ẻ|ẽ|ẹ|ề|ế|ể|ễ|ệ|ì|í|ỉ|ĩ|ị|ò|ó|ỏ|õ|ọ|ồ|ố|ổ|ỗ|ộ|ờ|ớ|ở|ỡ|ợ|ù|ú|ủ|ũ|ụ|ừ|ứ|ử|ữ|ự|ỳ|ý|ỷ|ỹ|ỵ|À|Á|Ả|Ã|Ạ|Ầ|Ấ|Ẩ|Ẫ|Ậ|Ằ|Ắ|Ẳ|Ẵ|Ặ|È|É|Ẻ|Ẽ|Ẹ|Ề|Ế|Ể|Ễ|Ệ|Ì|Í|Ỉ|Ĩ|Ị|Ò|Ó|Ỏ|Õ|Ọ|Ồ|Ố|Ổ|Ỗ|Ộ|Ờ|Ớ|Ở|Ỡ|Ợ|Ù|Ú|Ủ|Ũ|Ụ|Ừ|Ứ|Ử|Ữ|Ự|Ỳ|Ý|Ỷ|Ỹ|Ỵ',
+        lambda x: dicchar[x.group()], txt)
+
+
+def is_valid_vietnam_word(word):
+    chars = list(word)
+    nguyen_am_index = -1
+    for index, char in enumerate(chars):
+        x, y = nguyen_am_to_ids.get(char, (-1, -1))
+        if x != -1:
+            if nguyen_am_index == -1:
+                nguyen_am_index = index
+            else:
+                if index - nguyen_am_index != 1:
+                    return False
+                nguyen_am_index = index
+    return True
+
 def chuan_hoa_dau_tu_tieng_viet(word):
     if not is_valid_vietnam_word(word):
         return word
@@ -103,18 +149,17 @@ def chuan_hoa_dau_cau_tieng_viet(sentence):
 
 
 def text_preprocess(document):
-    # xóa html code
-    document = remove_html(document)
-    # chuẩn hóa unicode
-    document = convert_unicode(document)
-    # chuyển thành chữ thường
-    document.lower()
-    # chuẩn hóa cách gõ dấu tiếng Việt
-    document = chuan_hoa_dau_cau_tieng_viet(document)
-    # xóa các ký tự không cần thiết
-    document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
-    # tách từ
-    document = vncorenlp.tokenize(document)
+    with VnCoreNLP(vncorenlp_file) as vncorenlp:
+        # xóa html code
+        document = remove_html(document)
+        # chuẩn hóa unicode
+        document = convert_unicode(document)
+        # chuyển thành chữ thường
+        document.lower()
+        # chuẩn hóa cách gõ dấu tiếng Việt
+        document = chuan_hoa_dau_cau_tieng_viet(document)
+        # xóa các ký tự không cần thiết
+        document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
+        # tách từ
+        document = vncorenlp.tokenize(document)
     return document
-
-annotator.close()

@@ -27,4 +27,3 @@ model = FastText(corpus, size=100, workers=4, window=5)
 
 print(np.shape(model['thầy giáo']))
 
-annotator.close()
