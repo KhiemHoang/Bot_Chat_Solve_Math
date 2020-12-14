@@ -7,7 +7,6 @@ from keras import layers, models, optimizers
 from keras.layers import *
 
 import vietnamese_nlp as vnlp
-import test_of_test as test
 import pickle
 import pandas as pd
 
@@ -46,7 +45,7 @@ def word_vertorize(X_data):
 
     X_data_tfidf =  tfidf_vect.transform(X_data)
 
-    svd = TruncatedSVD(n_components=10, random_state=42)
+    svd = TruncatedSVD(n_components=70, random_state=42)
     svd.fit(X_data_tfidf)
 
     X_data_tfidf_svd = svd.transform(X_data_tfidf)
@@ -55,7 +54,7 @@ def word_vertorize(X_data):
 
 
 #train model
-def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet=False, n_epochs=3):       
+def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=5):       
     X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.1, random_state=42)
     
     if is_neuralnet:
@@ -77,9 +76,9 @@ def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet=False, 
 
 #lstm model
 def create_lstm_model():
-    input_layer = Input(shape=(10,))
+    input_layer = Input(shape=(70,))
     
-    layer = Reshape((1, 10))(input_layer)
+    layer = Reshape((10, 7))(input_layer)
     layer = LSTM(128, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
@@ -104,4 +103,25 @@ def train_and_test():
     classifier = create_lstm_model()
     X_data_tfidf_svd = word_vertorize(X_train)
     X_test_tfidf_svd = word_vertorize(X_test)
-    train_model(classifier=classifier, X_data=X_data_tfidf_svd, y_data=y_data_n, X_test=X_test_tfidf_svd, y_test=y_test_n, is_neuralnet=True)
+    train_model(classifier, X_data=X_data_tfidf_svd, y_data=y_data_n, X_test=X_test_tfidf_svd, y_test=y_test_n, is_neuralnet=True)
+
+    classifier.save('MyModel.h5')
+
+    # text = 'Chú có 1 quyển vở. Chú bị mất 1 quyển vở . Hỏi Chú còn bao nhiêu quyển vở?'
+
+    # tfidf_vect = TfidfVectorizer(analyzer='word')
+    # tfidf_vect.fit(X_train)
+    # X_data_tfidf =  tfidf_vect.transform(X_train)
+
+    # svd = TruncatedSVD(n_components=70, random_state=42)
+    # svd.fit(X_data_tfidf)   
+    # X_data_tfidf_svd = svd.transform(X_data_tfidf)
+
+    # encoder = preprocessing.LabelEncoder()
+    # y_data_n = encoder.fit_transform(y_train)
+
+    # test_doc = vnlp.preprocessing_prediction(annotator, text)
+    # test_doc_tfidf = tfidf_vect.transform([text])    
+    # test_doc_svd = svd.transform(test_doc_tfidf)
+    # print('ok')
+    # classifier.predict(test_doc_svd)

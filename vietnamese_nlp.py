@@ -34,7 +34,7 @@ def pre_process_train_data(annotator,df_input):
     X = []
     y = []
 
-    for text in df_input['problem'].head(2):
+    for text in df_input['problem']:
         text = covert_unicode(text)
         #text = vnstandard.chuan_hoa_dau_cau_tieng_viet(text)
         text = gensim.utils.simple_preprocess(text)
@@ -49,3 +49,14 @@ def pre_process_train_data(annotator,df_input):
     for text in df_input['problem_type']:
         y.append(text)
     return X, y
+
+def preprocessing_prediction(annotator,text):
+    text = covert_unicode(text)
+    text = gensim.utils.simple_preprocess(text)
+    text = ' '.join(text)
+
+    str1 = "" 
+    s1 = annotator.tokenize(text)
+    str1 = ' '.join(map(lambda a:' '.join(map(str, a)), s1))
+
+    return str1

@@ -1,0 +1,34 @@
+from tensorflow.python.keras import models
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import TruncatedSVD
+from sklearn import preprocessing
+import pickle
+
+import vietnamese_nlp as vnlp
+import numpy as np
+import pickle
+import pandas as pd
+
+def predict_math_type(annotator, text):
+    X_data = pickle.load(open('data/X_train.pkl', 'rb'))
+    y_data = pickle.load(open('data/y_train.pkl', 'rb'))
+
+    tfidf_vect = TfidfVectorizer(analyzer='word')
+    tfidf_vect.fit(X_data)
+    X_data_tfidf =  tfidf_vect.transform(X_data)
+
+    svd = TruncatedSVD(n_components=70, random_state=42)
+    svd.fit(X_data_tfidf)   
+    X_data_tfidf_svd = svd.transform(X_data_tfidf)
+
+    encoder = preprocessing.LabelEncoder()
+    y_data_n = encoder.fit_transform(y_data)
+
+    test_doc = vnlp.preprocessing_prediction(annotator, text)
+    test_doc_tfidf = tfidf_vect.transform([text])    
+    test_doc_svd = svd.transform(test_doc_tfidf)
+    
+    
+    new_model = models.load_model('MyModel.h5')
+    a = new_model.predict(test_doc_svd)
+    print (a[0])
