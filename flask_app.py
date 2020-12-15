@@ -1,15 +1,32 @@
 from flask import Flask, render_template, url_for, request
 import pandas as pd
 import pickle
+from vncorenlp import VnCoreNLP
+import change_in_out
+import combine
+import increase_decrease
+import train_model as model
+import predict
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import TruncatedSVD
+from sklearn import preprocessing
+import vietnamese_nlp as vnlp
+import train_model as model
+from tensorflow.python.keras import models
+import numpy as np
 
 app = Flask(__name__)
+
+
+annotator = VnCoreNLP("VnCoreNLP\VnCoreNLP-1.1.1.jar", annotators="wseg, pos", max_heap_size='-Xmx2g')
 
 @app.route('/')
 def home():
 	return render_template('home.html')
 
-@app.route('/predict',methods=['POST'])
-def predict_math_type(annotator, text):
+@app.route('/predict_math_type',methods=['POST'])
+def predict_math_type():
+    annotator = VnCoreNLP("VnCoreNLP\VnCoreNLP-1.1.1.jar", annotators="wseg, pos", max_heap_size='-Xmx2g')
     X_data = pickle.load(open('data/X_train.pkl', 'rb'))
     y_data = pickle.load(open('data/y_train.pkl', 'rb'))
 
@@ -24,6 +41,8 @@ def predict_math_type(annotator, text):
     encoder = preprocessing.LabelEncoder()
     y_data_n = encoder.fit_transform(y_data)
 
+    text = request.form['problem']
+
     test_doc = vnlp.preprocessing_prediction(annotator, text)
     test_doc_tfidf = tfidf_vect.transform([text])    
     test_doc_svd = svd.transform(test_doc_tfidf)
@@ -34,8 +53,8 @@ def predict_math_type(annotator, text):
     arr = arr[0]
     result = np.where(arr == np.amax(arr))
     result = result[0]
-    print (arr)
-    print (result[0]) 
+    annotator.close()
+    return render_template('result.html',prediction = my_prediction)
 
 
 
