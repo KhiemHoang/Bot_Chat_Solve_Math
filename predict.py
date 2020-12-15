@@ -13,8 +13,8 @@ import sys
 np.set_printoptions(threshold=sys.maxsize)
 
 def predict_math_type(annotator, text):
-    X_data = pickle.load(open('data/X_train.pkl', 'rb'))
-    y_data = pickle.load(open('data/y_train.pkl', 'rb'))
+    X_data = pickle.load(open('data/X_test.pkl', 'rb'))
+    y_data = pickle.load(open('data/y_test.pkl', 'rb'))
 
     tfidf_vect = TfidfVectorizer(analyzer='word')
     tfidf_vect.fit(X_data)
@@ -31,11 +31,11 @@ def predict_math_type(annotator, text):
     test_doc_tfidf = tfidf_vect.transform([text])    
     test_doc_svd = svd.transform(test_doc_tfidf)
     
-    # print (y_data_n)
-    new_model = models.load_model('MyModel.h5')
-    arr = new_model.predict(test_doc_svd)
-    arr = arr[0]
-    result = np.where(arr == np.amax(arr))
-    result = result[0]
-    print (arr)
-    print (result[0]) 
+    # # print (y_data_n)
+    # new_model = models.load_model('MyModel.h5')
+    # arr = new_model.predict(test_doc_svd)
+    # arr = arr[0]
+    # result = np.where(arr == np.amax(arr))
+    # result = result[0]
+    # print (arr)
+    # print (result[0]) 
