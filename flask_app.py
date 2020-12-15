@@ -52,7 +52,7 @@ def predict_math_type():
     arr = new_model.predict(test_doc_svd)
     arr = arr[0]
     result = np.where(arr == np.amax(arr))
-    result = result[0]
+    my_prediction = result[0]
     annotator.close()
     return render_template('result.html',prediction = my_prediction)
 

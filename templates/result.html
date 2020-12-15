@@ -8,22 +8,24 @@
 
 	<header>
 		<div class="container">
-		<div id="brandname">
-			ML App
-		</div>
-		<h2>Spam Detector For SMS Messages</h2>
+		<h2>Dạng toán</h2>
 		
 	</div>
 	</header>
-	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Comment</b></p>
 	<div class="results">
 
 
 		
-	{% if prediction == 1%}
-	<h2 style="color:red;">Spam</h2>
-	{% elif prediction == 0%}
-	<h2 style="color:blue;">Not a Spam (It is a Ham)</h2>
+	{% if prediction == 0 %}
+	<h2 style="color:red;">Change in</h2>
+	{% elif prediction == 1 %}
+	<h2 style="color:blue;">Change out</h2>
+	{% elif prediction == 2 %}
+	<h2 style="color:red;">Combine</h2>
+	{% elif prediction == 3 %}
+	<h2 style="color:red;">Increase</h2>
+	{% elif prediction == 4 %}
+	<h2 style="color:red;">Reduction/h2>
 	{% endif %}
 
 	</div>
