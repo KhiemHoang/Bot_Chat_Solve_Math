@@ -6,6 +6,9 @@ from gensim.models.fasttext import FastText
 import pandas as pd
 from string import punctuation
 from vietnamese_standardized import text_preprocess
+import fasttext
+import fasttext.util
+
 
 # def fstxt(annotator, data, text):
 #     corpus = []
@@ -19,4 +22,5 @@ from vietnamese_standardized import text_preprocess
 
 ft = fasttext.load_model('cc.vi.300.bin')
 fasttext.util.reduce_model(ft, 100)
-ft.get_nearest_neighbors('chào')
+ft.get_nearest_neighbors('hello')
+ft.save_model('reduce_model.bin')
