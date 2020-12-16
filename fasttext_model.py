@@ -7,13 +7,16 @@ import pandas as pd
 from string import punctuation
 from vietnamese_standardized import text_preprocess
 
-def fstxt(annotator, data, text):
-    corpus = []
-    for i in data:
-        corpus.append(str(i).split(" "))
-    corpus[:1]
+# def fstxt(annotator, data, text):
+#     corpus = []
+#     for i in data:
+#         corpus.append(str(i).split(" "))
+#     corpus[:1]
 
-    model = FastText(corpus, size=100, workers=4, window=5)
+#     model = FastText(corpus, size=100, workers=4, window=5)
 
-    print(model[text])
+#     print(model[text])
 
+ft = fasttext.load_model('cc.vi.300.bin')
+fasttext.util.reduce_model(ft, 100)
+ft.get_nearest_neighbors('chào')
