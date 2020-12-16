@@ -148,18 +148,17 @@ def chuan_hoa_dau_cau_tieng_viet(sentence):
     return ' '.join(words)
 
 
-def text_preprocess(document):
-    with VnCoreNLP(vncorenlp_file) as vncorenlp:
+def text_preprocess(annotator, document):
         # xóa html code
-        document = remove_html(document)
+    document = remove_html(document)
         # chuẩn hóa unicode
-        document = convert_unicode(document)
+    document = convert_unicode(document)
         # chuyển thành chữ thường
-        document.lower()
+    document.lower()
         # chuẩn hóa cách gõ dấu tiếng Việt
-        document = chuan_hoa_dau_cau_tieng_viet(document)
+    document = chuan_hoa_dau_cau_tieng_viet(document)
         # xóa các ký tự không cần thiết
-        document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
+    document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
         # tách từ
-        document = vncorenlp.tokenize(document)
+    document = annotator.tokenize(document)
     return document
