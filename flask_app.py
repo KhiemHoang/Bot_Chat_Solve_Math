@@ -26,7 +26,6 @@ def home():
 
 @app.route('/predict_math_type',methods=['POST'])
 def predict_math_type():
-    annotator = VnCoreNLP("VnCoreNLP\VnCoreNLP-1.1.1.jar", annotators="wseg, pos", max_heap_size='-Xmx2g')
     X_data = pickle.load(open('data/X_train.pkl', 'rb'))
     y_data = pickle.load(open('data/y_train.pkl', 'rb'))
 
@@ -34,7 +33,7 @@ def predict_math_type():
     tfidf_vect.fit(X_data)
     X_data_tfidf =  tfidf_vect.transform(X_data)
 
-    svd = TruncatedSVD(n_components=70, random_state=42)
+    svd = TruncatedSVD(n_components=80, random_state=42)
     svd.fit(X_data_tfidf)   
     X_data_tfidf_svd = svd.transform(X_data_tfidf)
 
@@ -48,7 +47,7 @@ def predict_math_type():
     test_doc_svd = svd.transform(test_doc_tfidf)
     
     # print (y_data_n)
-    new_model = models.load_model('MyModel.h5')
+    new_model = models.load_model('MyModel_v2.h5')
     arr = new_model.predict(test_doc_svd)
     arr = arr[0]
     result = np.where(arr == np.amax(arr))

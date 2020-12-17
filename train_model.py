@@ -10,7 +10,7 @@ import vietnamese_nlp as vnlp
 import pickle
 import pandas as pd
 
-import
+# import
 
 def dump_file(annotator):
     # get data for testing
@@ -47,7 +47,7 @@ def word_vertorize(X_data):
 
     X_data_tfidf =  tfidf_vect.transform(X_data)
 
-    svd = TruncatedSVD(n_components=70, random_state=42)
+    svd = TruncatedSVD(n_components=80, random_state=42)
     svd.fit(X_data_tfidf)
 
     X_data_tfidf_svd = svd.transform(X_data_tfidf)
@@ -56,8 +56,8 @@ def word_vertorize(X_data):
 
 
 #train model
-def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=5):       
-    X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.1, random_state=42)
+def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=10):       
+    X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.7, random_state=42)
     
     if is_neuralnet:
         classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
@@ -78,9 +78,9 @@ def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epoc
 
 #lstm model
 def create_lstm_model():
-    input_layer = Input(shape=(70,))
+    input_layer = Input(shape=(80,))
     
-    layer = Reshape((10, 7))(input_layer)
+    layer = Reshape((8, 10))(input_layer)
     layer = LSTM(128, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
@@ -107,7 +107,7 @@ def train_and_test():
     X_test_tfidf_svd = word_vertorize(X_test)
     train_model(classifier, X_data=X_data_tfidf_svd, y_data=y_data_n, X_test=X_test_tfidf_svd, y_test=y_test_n, is_neuralnet=True)
 
-    classifier.save('MyModel.h5')
+    classifier.save('MyModel_v2.h5')
 
     # text = 'Chú có 1 quyển vở. Chú bị mất 1 quyển vở . Hỏi Chú còn bao nhiêu quyển vở?'
 

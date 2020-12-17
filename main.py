@@ -1,12 +1,12 @@
 from vncorenlp import VnCoreNLP
 # import change_in_out
-# import combine
+# # import combine
 # import increase_decrease
-# import train_model as model
-# import predict
-#import data.create_data as create_data
-import fasttext as ft
-import pickle
+import train_model as model
+import predict
+import data.create_data as create_data
+# import fasttext as ft
+# import pickle
 
 
 if __name__ == '__main__':
@@ -26,10 +26,13 @@ if __name__ == '__main__':
     # elif math_type == 'increase' or math_type == 'decrease':
     #     increase_decrease.solve_math_problem(annotator, text, math_type)
     
-    # text = 'Juses có 100 cây gậy. Juses tìm được 50 cây gậy nữa. Hỏi số gậy mà Jesus có?'
-    # predict.predict_math_type(annotator, text)
+    text = 'Hiếu cầm 70 Long. Vũ cầm 70 Long. Hiếu mượn 44 Long từ Vũ. Hỏi Hiếu và Vũ có bao nhiêu Long?'
+    predict.predict_math_type(annotator, text)
+    # model.dump_file(annotator)
     # model.train_and_test()
-    X_data = pickle.load(open('data/X_test.pkl', 'rb'))
-    X_test = pickle.load(open('data/X_test.pkl', 'rb'))
-    ft.fstxt(annotator, X_data, X_test)
+    # X_data = pickle.load(open('data/X_test.pkl', 'rb'))
+    # X_test = pickle.load(open('data/X_test.pkl', 'rb'))
+    # ft.fstxt(annotator, X_data, X_test)
     annotator.close()
+
+    # create_data.out_data()
