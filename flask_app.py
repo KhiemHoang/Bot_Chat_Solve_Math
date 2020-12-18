@@ -24,6 +24,12 @@ annotator = VnCoreNLP("VnCoreNLP\VnCoreNLP-1.1.1.jar", annotators="wseg, pos", m
 def home():
 	return render_template('home.html')
 
+# @app.route("/get")
+# #function for the bot response
+# def get_bot_response():
+#     userText = request.args.get('msg')
+#     return str(englishBot.get_response(userText))
+
 @app.route('/predict_math_type',methods=['POST'])
 def predict_math_type():
     X_data = pickle.load(open('data/X_train.pkl', 'rb'))
@@ -40,7 +46,7 @@ def predict_math_type():
     encoder = preprocessing.LabelEncoder()
     y_data_n = encoder.fit_transform(y_data)
 
-    text = request.form['problem']
+    text = request.args.get('msg')
 
     test_doc = vnlp.preprocessing_prediction(annotator, text)
     test_doc_tfidf = tfidf_vect.transform([text])    
