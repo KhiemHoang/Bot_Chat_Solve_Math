@@ -12,16 +12,20 @@ def get_pos_df(df_final, df_pos):
     return df_final, df_pos
 
 def solve_math_problem(annotator, text, math_type):
-    print('Đề bài: ', text)
-    print ('')
+    answer = ''
+    de_bai = 'Đề bài: ' + text + '\n' + '\n'
+
+    match = ""
     if (math_type == 'change_in'):
-        print ('Đây là dạng toán A nhận từ B. Cách giải như sau:')  
-        print ("""- A có 'x' đồ vật. B có 'y' đồ vật. A nhận từ B 'z' đồ vật.""")
-        print ("""- Vậy A có số đồ vật = x + z""")
-        print ("""      B có số đồ vật = y - z""")
-        print ('')
+        change_in_1 = 'Đây là dạng toán A nhận từ B. Cách giải như sau: \n'
+        change_in_2 = """- A có 'x' đồ vật. B có 'y' đồ vật. A nhận từ B 'z' đồ vật. \n"""
+        change_in_3 = """- Vậy A có số đồ vật = x + z \n"""
+        change_in_4 = """      B có số đồ vật = y - z \n \n"""
+
+        match = change_in_1 + change_in_2 + change_in_3 + change_in_4
+
     elif (math_type == 'change_out'):
-        print ('Đây là dạng toán B nhận từ A. Cách giải như sau:')
+        change_out_1 = 'Đây là dạng toán B nhận từ A. Cách giải như sau: \n'
         print ("""A có 'x' đồ vật. B có 'y' đồ vật. A cho B 'z' đồ vật.""")
         print ("""Vậy A có số đồ vật = x - z""")
         print ("""    B có số đồ vật = y + z""")
@@ -37,13 +41,13 @@ def solve_math_problem(annotator, text, math_type):
         df_pos = vnlp.postagging_for_text(annotator,text)
 
     df_final, df_pos = get_pos_df(df_final, df_pos)
-    print (df_final)
     
     first_owner = df_final['owner_1'].iloc[0]
     second_owner = ''
     num_1 = df_final['quantity'].iloc[0]
     num_2 = 0
 
+    answer_format = ''
     for i in range(len(df_final)):
         owner_1 = df_final['owner_1'].iloc[i]
         owner_2 = df_final['owner_2'].iloc[i]
@@ -78,11 +82,16 @@ def solve_math_problem(annotator, text, math_type):
 
         elif flag == 'YES':
             if owner_1 == first_owner:
-                print ('Số', main_obj, sub_obj, 'mà', owner_1, 'hiện có:', num_1)
-                print ('Số', main_obj, sub_obj, 'mà', second_owner, 'hiện có:', num_2)
+                answer_1 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(owner_1) + ' hiện có: ' + str(num_1) + '\n'
+                answer_2 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(second_owner) + ' hiện có: ' + str(num_2) + '\n'
+                answer_format = answer_1 + answer_2
             elif owner_1 == second_owner:
-                print ('Số', main_obj, sub_obj, 'mà', owner_2, 'hiện có:', num_1)
-                print ('Số', main_obj, sub_obj, 'mà', first_owner, 'hiện có:', num_2)
+                answer_1 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(owner_2) + ' hiện có: ' + str(num_1) + '\n'
+                answer_2  ='Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(first_owner) + ' hiện có: ' + str(num_2) + '\n'
+                answer_format = answer_1 + answer_2 
 
         else:
-            print('Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.')
+            answer_format = 'Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.'
+
+    answer = de_bai + match + answer_format
+    return answer
