@@ -23,11 +23,11 @@ def predict_math_type(annotator, text):
     svd = TruncatedSVD(n_components=80, random_state=42)
     svd.fit(X_data_tfidf)   
     X_data_tfidf_svd = svd.transform(X_data_tfidf)
-    print (y_data[:100])
+    # print (y_data[:100])
 
     encoder = preprocessing.LabelEncoder()
     y_data_n = encoder.fit_transform(y_data)
-    print (y_data_n[:100])
+    # print (y_data_n[:100])
 
     test_doc = vnlp.preprocessing_prediction(annotator, text)
     test_doc_tfidf = tfidf_vect.transform([text])    
@@ -39,5 +39,6 @@ def predict_math_type(annotator, text):
     arr = arr[0]
     result = np.where(arr == np.amax(arr))
     result = result[0]
-    print (arr)
-    print (result[0]) 
+    # print (arr)
+    # print (result[0]) 
+    return result[0]

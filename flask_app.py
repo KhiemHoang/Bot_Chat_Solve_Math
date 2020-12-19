@@ -30,38 +30,24 @@ def home():
 #     userText = request.args.get('msg')
 #     return str(englishBot.get_response(userText))
 
-@app.route('/predict_math_type',methods=['POST'])
-def predict_math_type():
-    X_data = pickle.load(open('data/X_train.pkl', 'rb'))
-    y_data = pickle.load(open('data/y_train.pkl', 'rb'))
+# @app.route('/get',methods=['POST'])
+# def get_bot_response():
+#     userText = request.args.get('msg')
+#     return str(predict.predict_math_type(userText))
 
-    tfidf_vect = TfidfVectorizer(analyzer='word')
-    tfidf_vect.fit(X_data)
-    X_data_tfidf =  tfidf_vect.transform(X_data)
+@app.route('/process',methods=['POST'])
+def process():
+    annotator = VnCoreNLP("VnCoreNLP\VnCoreNLP-1.1.1.jar", annotators="wseg, pos", max_heap_size='-Xmx2g')
+    user_input = request.form['user_input']
 
-    svd = TruncatedSVD(n_components=80, random_state=42)
-    svd.fit(X_data_tfidf)   
-    X_data_tfidf_svd = svd.transform(X_data_tfidf)
-
-    encoder = preprocessing.LabelEncoder()
-    y_data_n = encoder.fit_transform(y_data)
-
-    text = request.args.get('msg')
-
-    test_doc = vnlp.preprocessing_prediction(annotator, text)
-    test_doc_tfidf = tfidf_vect.transform([text])    
-    test_doc_svd = svd.transform(test_doc_tfidf)
+    math_type = predict.predict_math_type(annotator,user_input)
     
-    # print (y_data_n)
-    new_model = models.load_model('MyModel_v2.h5')
-    arr = new_model.predict(test_doc_svd)
-    arr = arr[0]
-    result = np.where(arr == np.amax(arr))
-    my_prediction = result[0]
-    annotator.close()
-    return render_template('result.html',prediction = my_prediction)
+    bot_response = str(bot_response)
 
 
+    print("Friend: "+bot_response)
+    return render_template('home.html',user_input=user_input,bot_response=bot_response)
+    
 
 if __name__ == '__main__':
 	app.run(debug=True)
