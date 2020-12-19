@@ -13,22 +13,30 @@ import sys
 np.set_printoptions(threshold=sys.maxsize)
 
 def predict_math_type(annotator, text):
-    X_data = pickle.load(open('data/X_test.pkl', 'rb'))
-    y_data = pickle.load(open('data/y_test.pkl', 'rb'))
+    X_data = pickle.load(open('data/X_train.pkl', 'rb'))
+    y_data = pickle.load(open('data/y_train.pkl', 'rb'))
 
     tfidf_vect = TfidfVectorizer(analyzer='word')
     tfidf_vect.fit(X_data)
     X_data_tfidf =  tfidf_vect.transform(X_data)
 
-    svd = TruncatedSVD(n_components=80, random_state=42)
+    svd = TruncatedSVD(n_components=100, random_state=42)
     svd.fit(X_data_tfidf)   
     X_data_tfidf_svd = svd.transform(X_data_tfidf)
+<<<<<<< Updated upstream
 
     # print (y_data[:100])
 
     encoder = preprocessing.LabelEncoder()
     y_data_n = encoder.fit_transform(y_data)
     # print (y_data_n[:100])
+=======
+    print (y_data[:30])    
+
+    encoder = preprocessing.LabelEncoder()
+    y_data_n = encoder.fit_transform(y_data)
+    print (y_data_n[:30])
+>>>>>>> Stashed changes
 
     test_doc = vnlp.preprocessing_prediction(annotator, text)
     test_doc_tfidf = tfidf_vect.transform([text])
@@ -39,6 +47,23 @@ def predict_math_type(annotator, text):
     arr = arr[0]
     result = np.where(arr == np.amax(arr))
     result = result[0]
+<<<<<<< Updated upstream
     # print (arr)
     # print (result[0]) 
     return result[0]
+=======
+    math_type = ''
+    if (result == 0):
+        math_type = 'change_in'
+    elif (result == 1):
+        math_type = 'change_out'
+    elif (result == 2):
+        math_type = 'combine'
+    elif (result == 3):
+        math_type = 'decrease'
+    elif (result == 4):
+        math_type = 'increase'
+    # print (arr)
+    # print (result[0]) 
+    return math_type
+>>>>>>> Stashed changes

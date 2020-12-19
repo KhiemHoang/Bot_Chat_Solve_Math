@@ -47,7 +47,7 @@ def word_vertorize(X_data):
 
     X_data_tfidf =  tfidf_vect.transform(X_data)
 
-    svd = TruncatedSVD(n_components=80, random_state=42)
+    svd = TruncatedSVD(n_components=100, random_state=42)
     svd.fit(X_data_tfidf)
 
     X_data_tfidf_svd = svd.transform(X_data_tfidf)
@@ -56,31 +56,24 @@ def word_vertorize(X_data):
 
 
 #train model
-def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=10):       
+def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=20):       
     X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.3, random_state=42)
     
-    if is_neuralnet:
-        classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
-        
-        val_predictions = classifier.predict(X_val)
-        test_predictions = classifier.predict(X_test)
-        val_predictions = val_predictions.argmax(axis=-1)
-        test_predictions = test_predictions.argmax(axis=-1)
-    else:
-        classifier.fit(X_train, y_train)
+    classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
     
-        train_predictions = classifier.predict(X_train)
-        val_predictions = classifier.predict(X_val)
-        test_predictions = classifier.predict(X_test)
-        
+    val_predictions = classifier.predict(X_val)
+    test_predictions = classifier.predict(X_test)
+    val_predictions = val_predictions.argmax(axis=-1)
+    test_predictions = test_predictions.argmax(axis=-1)
+    
     print("Validation accuracy: ", metrics.accuracy_score(val_predictions, y_val))
     print("Test accuracy: ", metrics.accuracy_score(test_predictions, y_test))
 
 #lstm model
 def create_lstm_model():
-    input_layer = Input(shape=(80,))
+    input_layer = Input(shape=(100,))
     
-    layer = Reshape((8, 10))(input_layer)
+    layer = Reshape((10, 10))(input_layer)
     layer = LSTM(128, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
