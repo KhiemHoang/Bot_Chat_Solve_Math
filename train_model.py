@@ -57,7 +57,7 @@ def word_vertorize(X_data):
 
 #train model
 def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=10):       
-    X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.7, random_state=42)
+    X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.3, random_state=42)
     
     if is_neuralnet:
         classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
