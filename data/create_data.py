@@ -131,7 +131,7 @@ def out_data():
         while(first_subject == second_subject):
             second_subject = random.choice(owner_1st)
         
-        object_subject = random.choice(owner_1st)
+        object_subject = random.choice(object_1st)
         general_action = random.choice(general_action_list)
         
         keyword_change_in = random.choice(change_in_list)
