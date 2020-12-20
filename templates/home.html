@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CoronaBot</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,13 +11,7 @@
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
   <section class="msger">
-    <header class="msger-header">
-      <div class="msger-header-title">
-        <i class="fas fa-bug"></i> Coronavirus Chatbot <i class="fas fa-bug"></i>
-      </div>
-    </header>
 
     <main class="msger-chat">
       <div class="msg left-msg">
@@ -26,24 +19,23 @@
 
         <div class="msg-bubble">
           <div class="msg-info">
-            <div class="msg-info-name">CoronaBot</div>
-            <div class="msg-info-time">12:45</div>
+            <div class="msg-info-name">ChatBot</div>
           </div>
 
           <div class="msg-text">
-            Hi, welcome to CoronaBot! Go ahead and send me a message. 😄
+            Xin chào! Bạn đang gặp khó khăn với bài toán nào?
           </div>
         </div>
       </div>
 
     </main>
 
-    <form class="msger-inputarea">
+    <form class="msger-inputarea" action="{{ url_for('get_bot_response')}}" method="post">
       <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
       <button type="submit" class="msger-send-btn">Send</button>
-    </form>
+    </form>    
   </section>
-  <!-- partial -->
+  
   <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
   <script>
 
@@ -55,18 +47,21 @@
     // Icons made by Freepik from www.flaticon.com
     const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
     const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
-    const BOT_NAME = "CoronaBot";
+    const BOT_NAME = "ChatBot";
     const PERSON_NAME = "You";
+
 
     msgerForm.addEventListener("submit", event => {
       event.preventDefault();
 
       const msgText = msgerInput.value;
       if (!msgText) return;
-
+      
       appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
       msgerInput.value = "";
-      botResponse(msgText);
+      // var bot_response = '{{ bot_response }}';
+      // appendMessage(BOT_NAME, BOT_IMG, "left", bot_response);
+      botResponse(msgText)
     });
 
     function appendMessage(name, img, side, text) {
@@ -74,11 +69,13 @@
       const msgHTML = `
 <div class="msg ${side}-msg">
   <div class="msg-img" style="background-image: url(${img})"></div>
+
   <div class="msg-bubble">
     <div class="msg-info">
       <div class="msg-info-name">${name}</div>
       <div class="msg-info-time">${formatDate(new Date())}</div>
     </div>
+
     <div class="msg-text">${text}</div>
   </div>
 </div>
@@ -107,14 +104,13 @@
       return root.querySelector(selector);
     }
 
+    // Get time
     function formatDate(date) {
       const h = "0" + date.getHours();
       const m = "0" + date.getMinutes();
 
       return `${h.slice(-2)}:${m.slice(-2)}`;
     }
-
-
 
   </script>
 

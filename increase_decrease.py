@@ -41,7 +41,6 @@ def solve_math_problem(annotator, text, math_type):
     print (df_final)
     print ('')
 
-    answer = 'huhu'
     num_1 = df_final['quantity'].iloc[0]
     num_2 = 0
     for i in range(len(df_final)):

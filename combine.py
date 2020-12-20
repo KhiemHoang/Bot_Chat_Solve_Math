@@ -56,10 +56,10 @@ def combine(annotator, text, math_type):
                 num_2 = quantity
         
         elif flag == 'YES':
-            print ('Tổng số', main_obj, sub_obj, 'mà', first_owner, 'và', second_owner, 'có:', num_1 + num_2)
+            answer = 'Tổng số' + str(main_obj) +' ' + str(sub_obj) + ' mà ' + str(first_owner) + ' và ' + str(second_owner) + ' có: ' + str(num_1 + num_2)
+            # print ('Tổng số', main_obj, sub_obj, 'mà', first_owner, 'và', second_owner, 'có:', num_1 + num_2)
 
         else:
-            print('Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.')
-        
-    answer = 'Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.'
+            answer = 'Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.'
+            # print('Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.')
     return answer
