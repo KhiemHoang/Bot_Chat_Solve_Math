@@ -31,6 +31,7 @@ def process():
     user_input = request.form['user_input']
     bot_response = ''
     math_type = predict.predict_math_type(annotator,user_input)
+<<<<<<< Updated upstream
     if (math_type == 'change_in' or math_type == 'change_out'):
         bot_response = change_in_out.solve_math_problem(annotator,user_input,math_type)
     elif (math_type == 'combine'):
@@ -38,6 +39,15 @@ def process():
     elif (math_type == 'increase' or math_type == 'decrease'):
         bot_response = increase_decrease.solve_math_problem(annotator,user_input,math_type)
     
+=======
+    # if (math_type == 'change_in' or math_type == 'change_out'):
+    #     bot_response = change_in_out.solve_math_problem(annotator,user_input,math_type)
+    # elif (math_type == 'combine'):
+    #     bot_response = combine.solve_math_problem(annotator,user_input,math_type)
+    # elif (math_type == 'increase' or math_type == 'decrease'):
+    #     bot_response = increase_decrease.solve_math_problem(annotator,user_input,math_type)
+    bot_response = math_type
+>>>>>>> Stashed changes
     print("Friend: "+bot_response)
     return render_template('home.html',user_input=user_input,bot_response=bot_response)
 

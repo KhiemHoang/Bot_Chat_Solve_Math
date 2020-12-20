@@ -10,6 +10,8 @@ import vietnamese_nlp as vnlp
 import pickle
 import pandas as pd
 
+import matplotlib.pyplot as plt
+
 # import
 
 def dump_file(annotator):
@@ -19,6 +21,7 @@ def dump_file(annotator):
     X_test, y_test = vnlp.pre_process_train_data(annotator, df_test)
     pickle.dump(X_test, open('data/X_test.pkl', 'wb'))
     pickle.dump(y_test, open('data/y_test.pkl', 'wb'))
+    print ('Done train')
 
     # get data for trainning
     df_train = pd.DataFrame()
@@ -26,6 +29,7 @@ def dump_file(annotator):
     X_train, y_train = vnlp.pre_process_train_data(annotator,df_train)
     pickle.dump(X_train, open('data/X_train.pkl', 'wb'))
     pickle.dump(y_train, open('data/y_train.pkl', 'wb'))
+    print ('Done test')
 
 def load_train_file():
     #get data for training
@@ -56,9 +60,10 @@ def word_vertorize(X_data):
 
 
 #train model
-def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=20):       
+def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=50):       
     X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.3, random_state=42)
     
+    # history = classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
     classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
     
     val_predictions = classifier.predict(X_val)
@@ -68,6 +73,22 @@ def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epoc
     
     print("Validation accuracy: ", metrics.accuracy_score(val_predictions, y_val))
     print("Test accuracy: ", metrics.accuracy_score(test_predictions, y_test))
+
+    # plt.plot(history.history['accuracy'])
+    # plt.plot(history.history['val_accuracy'])
+    # plt.title('model accuracy')
+    # plt.ylabel('accuracy')
+    # plt.xlabel('epoch')
+    # plt.legend(['train', 'test'], loc='upper left')
+    # plt.show()
+
+    # plt.plot(history.history['loss'])
+    # plt.plot(history.history['val_loss'])
+    # plt.title('model loss')
+    # plt.ylabel('loss')
+    # plt.xlabel('epoch')
+    # plt.legend(['train', 'test'], loc='upper left')
+    # plt.show()
 
 #lstm model
 def create_lstm_model():
