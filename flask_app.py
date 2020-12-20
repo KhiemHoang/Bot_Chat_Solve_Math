@@ -37,7 +37,7 @@ def process():
         bot_response = combine.solve_math_problem(annotator,user_input,math_type)
     elif (math_type == 'increase' or math_type == 'decrease'):
         bot_response = increase_decrease.solve_math_problem(annotator,user_input,math_type)
-    # bot_response = math_type
+    
     print("Friend: "+bot_response)
     return render_template('home.html',user_input=user_input,bot_response=bot_response)
 

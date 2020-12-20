@@ -1,8 +1,9 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
+  <title>CoronaBot</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,7 +12,13 @@
 </head>
 
 <body>
+  <!-- partial:index.partial.html -->
   <section class="msger">
+    <header class="msger-header">
+      <div class="msger-header-title">
+        <i class="fas fa-bug"></i> Coronavirus Chatbot <i class="fas fa-bug"></i>
+      </div>
+    </header>
 
     <main class="msger-chat">
       <div class="msg left-msg">
@@ -19,11 +26,12 @@
 
         <div class="msg-bubble">
           <div class="msg-info">
-            <div class="msg-info-name">ChatBot</div>
+            <div class="msg-info-name">CoronaBot</div>
+            <div class="msg-info-time">12:45</div>
           </div>
 
           <div class="msg-text">
-            Xin chào! Bạn đang gặp khó khăn với bài toán nào?
+            Hi, welcome to CoronaBot! Go ahead and send me a message. 😄
           </div>
         </div>
       </div>
@@ -35,7 +43,7 @@
       <button type="submit" class="msger-send-btn">Send</button>
     </form>
   </section>
-
+  <!-- partial -->
   <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
   <script>
 
@@ -47,7 +55,7 @@
     // Icons made by Freepik from www.flaticon.com
     const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
     const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
-    const BOT_NAME = "ChatBot";
+    const BOT_NAME = "CoronaBot";
     const PERSON_NAME = "You";
 
     msgerForm.addEventListener("submit", event => {
@@ -66,13 +74,11 @@
       const msgHTML = `
 <div class="msg ${side}-msg">
   <div class="msg-img" style="background-image: url(${img})"></div>
-
   <div class="msg-bubble">
     <div class="msg-info">
       <div class="msg-info-name">${name}</div>
       <div class="msg-info-time">${formatDate(new Date())}</div>
     </div>
-
     <div class="msg-text">${text}</div>
   </div>
 </div>
@@ -85,25 +91,22 @@
     function botResponse(rawText) {
 
       // Bot Response
-      // $.get("/get", { msg: rawText }).done(function (data) {
-      //   console.log(rawText);
-      //   console.log(data);
-      //   const msgText = data;
-      //   appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+      $.get("/get", { msg: rawText }).done(function (data) {
+        console.log(rawText);
+        console.log(data);
+        const msgText = data;
+        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
 
-      // });
-
-      get_bot_response()
+      });
 
     }
 
 
     // Utils
-    // function get(selector, root = document) {
-    //   return root.querySelector(selector);
-    // }
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
 
-    // Get time
     function formatDate(date) {
       const h = "0" + date.getHours();
       const m = "0" + date.getMinutes();
@@ -112,61 +115,9 @@
     }
 
 
-    // function getBotResponse() {
-    //   var rawText = $("#textInput").val();
-    //   var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-    //   $("#textInput").val("");
-    //   $("#chatbox").append(userHtml);
-    //   document
-    //     .getElementById("userInput")
-    //     .scrollIntoView({ block: "start", behavior: "smooth" });
-    //   $.get("/get", { msg: rawText }).done(function(data) {
-    //     var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-    //     $("#chatbox").append(botHtml);
-    //     document
-    //       .getElementById("userInput")
-    //       .scrollIntoView({ block: "start", behavior: "smooth" });
-    //   });
-    // }
-    // $("#textInput").keypress(function(e) {
-    //   if (e.which == 13) {
-    //     getBotResponse();
-    //   }
-    // });
-
-
 
   </script>
 
 </body>
 
-</html> -->
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Friend Chatbot</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
-<body>
-<div class="container">
-	<div class="alert alert-primary" role="alert">
-User: {{user_input}}
-</div>
-<div class="alert alert-dark" role="alert">
-  Friend: {{bot_response}}
-</div>
-	
-
-	<form  action="/process" method="POST">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Friend Chatbot</label>
-    <input type="text" name="user_input" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Talk to my friend"><br>
-  <button type="submit" class="btn btn-primary">Send</button>
-</form>
-</div>
-</body>
 </html>
