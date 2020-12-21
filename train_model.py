@@ -15,20 +15,20 @@ import matplotlib.pyplot as plt
 # import
 
 def dump_file(annotator):
-    # get data for testing
-    df_test = pd.DataFrame()
-    df_test = pd.read_csv("data/test_data.csv")
-    X_test, y_test = vnlp.pre_process_train_data(annotator, df_test)
-    pickle.dump(X_test, open('data/X_test.pkl', 'wb'))
-    pickle.dump(y_test, open('data/y_test.pkl', 'wb'))
-    print ('Done train')
-
     # get data for trainning
     df_train = pd.DataFrame()
     df_train = pd.read_csv("data/train_data.csv")
     X_train, y_train = vnlp.pre_process_train_data(annotator,df_train)
     pickle.dump(X_train, open('data/X_train.pkl', 'wb'))
     pickle.dump(y_train, open('data/y_train.pkl', 'wb'))
+    print ('Done train')
+
+    # get data for testing
+    df_test = pd.DataFrame()
+    df_test = pd.read_csv("data/test_data.csv")
+    X_test, y_test = vnlp.pre_process_train_data(annotator, df_test)
+    pickle.dump(X_test, open('data/X_test.pkl', 'wb'))
+    pickle.dump(y_test, open('data/y_test.pkl', 'wb'))
     print ('Done test')
 
 def load_train_file():
@@ -60,8 +60,8 @@ def word_vertorize(X_data):
 
 
 #train model
-def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=30):       
-    X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.1, random_state=42)
+def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=50):       
+    X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.3, random_state=42)
     
     # history = classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
     if is_neuralnet:
@@ -103,8 +103,6 @@ def create_lstm_model():
     
     layer = Reshape((10, 10))(input_layer)
     layer = LSTM(128, activation='relu')(layer)
-    layer = Dense(512, activation='relu')(layer)
-    layer = Dense(512, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
     layer = Dense(128, activation='relu')(layer)

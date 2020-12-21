@@ -45,7 +45,7 @@ def change_in(first_subject,second_subject,object_subject,general_action,keyword
     
     first_number = random.randint(1,100)
     second_number = random.randint(1,100)
-    third_number = random.randint(1,100)
+    third_number = random.randint(1,second_number)
     order_2 = random.randint(1,2)
     
     sentence_1 = first_subject + ' ' + general_action + ' %s '%(first_number) + object_subject + '. '
@@ -61,9 +61,7 @@ def change_out(first_subject,second_subject,object_subject,general_action,keywor
 
     first_number = random.randint(1,100)
     second_number = random.randint(1,100)
-    third_number = random.randint(1,100)
-    while (third_number > first_number) or (third_number > second_number):
-        third_number = random.randint(1,100)
+    third_number = random.randint(1,first_number)
     order_2 = random.randint(1,2)
     
     sentence_1 = first_subject + ' ' + general_action + ' %s '%(first_number) + object_subject + '. '
@@ -81,8 +79,8 @@ def increase(first_subject,second_subject,object_subject,general_action,keyword)
     second_number = random.randint(1,100)
     
     sentence_1 = first_subject + ' ' + general_action + ' %s '%(first_number) + object_subject + '. '
-    sentence_2 = first_subject + ' ' + keyword + ' %s '%(second_number) + object_subject + ' nữa. Hỏi '
-    sentence_3 = first_subject + ' có bao nhiêu ' + object_subject + '?'
+    sentence_2 = first_subject + ' ' + keyword + ' %s '%(second_number) + object_subject + ' nữa.'
+    sentence_3 = 'Hỏi ' + first_subject + ' có bao nhiêu ' + object_subject + '?'
 
     problem = sentence_1 + sentence_2 + sentence_3
         
@@ -109,8 +107,8 @@ def combine(first_subject,second_subject,object_subject,general_action,keyword_c
     second_number = random.randint(1,100)
     
     sentence_1 = first_subject + ' ' + general_action + ' %s '%(first_number) + object_subject + '. '
-    sentence_2 = second_subject + ' ' + general_action + ' %s '%(second_number) + object_subject + '. Hỏi '
-    sentence_3 = first_subject + ' và ' + second_subject + ' có ' + keyword_combine + ' bao nhiêu ' + object_subject + '?'
+    sentence_2 = second_subject + ' ' + general_action + ' %s '%(second_number) + object_subject + '.'
+    sentence_3 = 'Hỏi cả hai có ' + keyword_combine + ' bao nhiêu ' + object_subject + '?'
 
     problem = sentence_1 + sentence_2 + sentence_3
        
@@ -119,7 +117,7 @@ def combine(first_subject,second_subject,object_subject,general_action,keyword_c
 #def main():
 def out_data():
     df_data = pd.DataFrame(columns=['problem', 'problem_type'])
-    for i in range (0, 30000):    
+    for i in range (0, 40000):    
         first_subject = random.choice(owner_1st)
         second_subject = random.choice(owner_1st)
         while(first_subject == second_subject):

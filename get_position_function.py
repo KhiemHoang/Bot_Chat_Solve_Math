@@ -110,8 +110,9 @@ def is_question(df_final, df_pos):
                     word = df_pos.loc[pos, '%s'%(col)]
 
                     if word != 'null value' and word[0] in word_flag:
+                        question = 'True'
                         df_final['is_question'] = 'NO'
                         df_final.at[fin, 'is_question'] = 'YES'
-                        df_pos.at[fin, '%s'%(col)] = 'null value'
-                        break
+                        df_pos.loc[pos] = 'null value'
+                        return df_final, df_pos
     return df_final, df_pos
