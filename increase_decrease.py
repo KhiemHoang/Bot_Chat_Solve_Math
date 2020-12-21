@@ -47,6 +47,7 @@ def solve_math_problem(annotator, text, math_type):
 
     owner_1 = df_final['owner_1'].iloc[0]
     num_1 = df_final['quantity'].iloc[0]
+    main_verb = verb = df_final['verb'].iloc[0]
     num_2 = 0
     for i in range(len(df_final)):
         flag = df_final['is_question'].iloc[i]
@@ -57,14 +58,15 @@ def solve_math_problem(annotator, text, math_type):
             sub_obj = df_final['sub_object'].iloc[i]
             quantity = df_final['quantity'].iloc[i]
             
-            answer_format_1 = str(owner_1) + ' ' + str(verb) + ': ' + str(num_1) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
-            if num_1 != quantity:
+            if main_verb != verb:
                 num_2 = quantity
                 answer_format_2 = str(owner_1) + ' ' + str(verb) + ': ' + str(num_2) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
                 if (math_type == 'decrease') and (num_2 > num_1):
                     answer_format = "Logic của bài toán sai rồi. Số lượng mất đi phải bé hơn số lượng ban đầu."
-                    break
-        
+                    break  
+            else:          
+                answer_format_1 = str(owner_1) + ' ' + str(verb) + ': ' + str(num_1) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'        
+
         elif flag == 'YES':
             if math_type == 'increase':
                 answer_format_3 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(owner_1) + ' có: ' + str(num_1 + num_2) + ' ' + str(main_obj)
@@ -79,5 +81,6 @@ def solve_math_problem(annotator, text, math_type):
             answer = 'Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.'
             # print('Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.')
 
+    print (answer_format_1, answer_format_2)
     answer = de_bai + match + answer_format
     return answer

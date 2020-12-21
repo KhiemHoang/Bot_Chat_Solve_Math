@@ -34,13 +34,14 @@ def solve_math_problem(annotator, text, math_type):
     df_final = pd.DataFrame(columns=['sentence', 'owner_1', 'verb', 'owner_2', 'main_object', 'sub_object', 'quantity', 'is_question'])
     for i in text.split('. '):
         df_final = df_final.append({'sentence': i}, ignore_index=True)
-        df_final[['owner_1', 'verb', 'owner_2', 'main_object', 'sub_object', 'is_question']] = df_final[['owner_1', 'verb', 'owner_2', 'main_object', 'sub_object', 'is_question']].fillna('').astype(str)
-
+        df_final[['owner_1', 'verb', 'owner_2', 'main_object', 'sub_object', 'is_question']] = df_final[['owner_1', 'verb', 'owner_2', 'main_object', 'sub_object', 'is_question']].fillna('null_value').astype(str)
+        df_final['sub_object'] = ''
     for i in text.split('. '):
         df_pos = pd.DataFrame()
         df_pos = vnlp.postagging_for_text(annotator,text)
 
     df_final, df_pos = get_pos_df(df_final, df_pos)
+    print (df_final)
 
     first_owner = df_final['owner_1'].iloc[0]
     second_owner = ''
@@ -64,13 +65,13 @@ def solve_math_problem(annotator, text, math_type):
             sub_obj = df_final['sub_object'].iloc[i]
             quantity = df_final['quantity'].iloc[i]
 
-            if owner_2 == '':
+            if owner_2 == 'null_value':
                 answer_1 = str(first_owner) + ' ' + str(verb) + ': ' + str(num_1) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
                 if owner_1 != first_owner:
                     second_owner = owner_1
                     num_2 = quantity
                     answer_2 = str(second_owner) + ' ' + str(verb) + ': ' + str(num_2) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
-
+            
             else:
                 answer_3 = str(first_owner) + ' ' + str(verb) + ' ' + str(owner_2) + ': ' + str(quantity) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
                 if (math_type == 'change_in'):
@@ -96,12 +97,12 @@ def solve_math_problem(annotator, text, math_type):
 
         elif flag == 'YES':
             if owner_1 == first_owner:
-                answer_4 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(owner_1) + ' có: ' + str(num_1) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
+                answer_4 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(first_owner) + ' có: ' + str(num_1) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
                 answer_5 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(second_owner) + ' có: ' + str(num_2) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
                 answer_format = answer_1 + answer_2 + answer_3 + answer_4 +answer_5
             elif owner_1 == second_owner:
-                answer_1 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(owner_2) + ' có: ' + str(num_1) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
-                answer_2  ='Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(first_owner) + ' có: ' + str(num_2) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
+                answer_4 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(second_owner) + ' có: ' + str(num_1) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
+                answer_5  ='Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(first_owner) + ' có: ' + str(num_2) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
                 answer_format = answer_1 + answer_2 + answer_3 + answer_4 +answer_5
 
         else:
