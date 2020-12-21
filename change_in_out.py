@@ -20,7 +20,7 @@ def solve_math_problem(annotator, text, math_type):
         change_in_1 = '<b> Cách giải</b> <br> Đây là dạng toán A nhận từ B. Cách giải như sau: <br>'
         change_in_2 = """- A có 'x' đồ vật. B có 'y' đồ vật. A nhận từ B 'z' đồ vật. <br>"""
         change_in_3 = "- Vậy: A có số đồ vật = <b>x + z</b> <br>"
-        change_in_4 = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspB có số đồ vật = <b>y - z</b> <br><br><br>"
+        change_in_4 = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspB có số đồ vật = <b>y - z</b><br><br><br>"
 
         match = change_in_1 + change_in_2 + change_in_3 + change_in_4
 
@@ -74,6 +74,9 @@ def solve_math_problem(annotator, text, math_type):
             else:
                 answer_3 = str(first_owner) + ' ' + str(verb) + ' ' + str(owner_2) + ': ' + str(quantity) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
                 if (math_type == 'change_in'):
+                    if num_2 < quantity:
+                        answer_format = 'Logic của bài toán sai rồi. Số lượng mà B cho A phải <b> bé hơn </b> số lượng mà B đang có.'
+                        break
                     if owner_1 == first_owner:
                         num_1 = num_1 + quantity
                         num_2 = num_2 - quantity
@@ -81,6 +84,9 @@ def solve_math_problem(annotator, text, math_type):
                         num_1 = num_2 + quantity
                         num_2 = num_1 - quantity
                 elif (math_type == 'change_out'):
+                    if num_1 < quantity:
+                        answer_format = 'Logic của bài toán sai rồi. Số lượng mà A cho B phải <b> bé hơn </b> số lượng mà B đang có.'
+                        break
                     if owner_1 == first_owner:
                         num_1 = num_1 - quantity
                         num_2 = num_2 + quantity

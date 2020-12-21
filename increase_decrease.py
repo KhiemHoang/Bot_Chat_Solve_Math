@@ -13,19 +13,18 @@ def get_pos_df(df_final, df_pos):
 
 def solve_math_problem(annotator, text, math_type):
     answer = ''
-    print('Đề bài: ', text)
-    print ('')
+    de_bai = '<b>Đề bài: </b> ' + text + '<br><br>'
 
+    match = ''
     if (math_type == 'increase'):
-        print ('Đây là dạng toán tăng số lượng. Cách giải như sau:')  
-        print ("""- A có 'x' đồ vật. A có thêm 'y' đồ vật.""")
-        print ("""- Vậy A có số đồ vật = x + y""")
-        print ('')
+        match = """<b> Cách giải </b> <br> Đây là dạng toán tăng số lượng. Cách giải như sau: <br>
+        - A có 'x' đồ vật. A có thêm 'y' đồ vật. <br>
+        - Vậy A có số đồ vật = <b>x + y</b> <br><br>"""
+
     elif (math_type == 'decrease'):
-        print ('Đây là dạng toán giảm số lượng. Cách giải như sau:')  
-        print ("""- A có 'x' đồ vật. A có thêm 'y' đồ vật.""")
-        print ("""- Vậy A có số đồ vật = x - y""")
-        print ('')
+        match = """<b> Cách giải </b> <br> Đây là dạng toán giảm số lượng. Cách giải như sau:' <br>
+        - A có 'x' đồ vật. A mất đi 'y' đồ vật.
+        - Vậy A có số đồ vật = <b>x - y</b> <br><br>"""
 
     df_final = pd.DataFrame(columns=['sentence', 'owner_1', 'verb', 'main_object', 'sub_object', 'quantity', 'is_question'])
     for i in text.split('. '):
@@ -36,35 +35,49 @@ def solve_math_problem(annotator, text, math_type):
         df_pos = pd.DataFrame()
         df_pos = vnlp.postagging_for_text(annotator,text)
 
-    print (df_pos)
+    # print (df_pos)
     df_final, df_pos = get_pos_df(df_final, df_pos)
-    print (df_final)
-    print ('')
+    # print (df_final)
+    # print ('')
 
+    answer_format = ''
+    answer_format_1 = ''
+    answer_format_2 = ''
+    answer_format_3 = ''
+
+    owner_1 = df_final['owner_1'].iloc[0]
     num_1 = df_final['quantity'].iloc[0]
     num_2 = 0
     for i in range(len(df_final)):
-        owner_1 = df_final['owner_1'].iloc[i]
-        verb = df_final['verb'].iloc[i]
-        main_obj = df_final['main_object'].iloc[i]
-        sub_obj = df_final['sub_object'].iloc[i]
-        quantity = df_final['quantity'].iloc[i]
         flag = df_final['is_question'].iloc[i]
 
         if flag == 'NO':
-            print (owner_1, verb, ':', quantity, main_obj, sub_obj)
+            verb = df_final['verb'].iloc[i]
+            main_obj = df_final['main_object'].iloc[i]
+            sub_obj = df_final['sub_object'].iloc[i]
+            quantity = df_final['quantity'].iloc[i]
+            
+            answer_format_1 = str(owner_1) + ' ' + str(verb) + ': ' + str(num_1) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
             if num_1 != quantity:
                 num_2 = quantity
+                answer_format_2 = str(owner_1) + ' ' + str(verb) + ': ' + str(num_2) + ' ' + str(main_obj) + ' ' + str(sub_obj) + '<br>'
+                if (math_type == 'decrease') and (num_2 > num_1):
+                    answer_format = "Logic của bài toán sai rồi. Số lượng mất đi phải bé hơn số lượng ban đầu."
+                    break
         
         elif flag == 'YES':
             if math_type == 'increase':
-                answer = 'Số' + str(main_obj) + str(sub_obj) + 'mà' + str(owner_1) + 'có:' + str(num_1 + num_2) + str(main_obj)
+                answer_format_3 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(owner_1) + ' có: ' + str(num_1 + num_2) + ' ' + str(main_obj)
                 # print ('Số', main_obj, sub_obj, 'mà', owner_1, 'có:', num_1 + num_2, main_obj )
+                answer_format = answer_format_1 + answer_format_2 + answer_format_3
             elif math_type == 'decrease':
-                answer = 'Số' + str(main_obj) + str(sub_obj) + 'mà' + str(owner_1) + 'còn:' + str(num_1 - num_2) + str(main_obj)
+                answer_format_3 = 'Số ' + str(main_obj) + ' ' + str(sub_obj) + ' mà ' + str(owner_1) + ' còn: ' + str(num_1 - num_2) + ' ' + str(main_obj)
                 # print ('Số', main_obj, sub_obj, 'mà', owner_1, 'còn:', num_1 - num_2, main_obj)
+                answer_format = answer_format_1 + answer_format_2 + answer_format_3
 
         else:
             answer = 'Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.'
             # print('Bài này khó quá, hiện tại mình chưa có đáp án. Mong bạn thông cảm.')
+
+    answer = de_bai + match + answer_format
     return answer
