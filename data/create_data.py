@@ -51,10 +51,7 @@ def change_in(first_subject,second_subject,object_subject,general_action,keyword
     sentence_1 = first_subject + ' ' + general_action + ' %s '%(first_number) + object_subject + '. '
     sentence_2 = second_subject + ' ' + general_action + ' %s '%(second_number) + object_subject + '. ' 
     sentence_3 = first_subject + ' ' + keyword + ' %s '%(third_number) + object_subject + ' từ ' + second_subject
-    if order_2 == 1:
-        sentence_4 = '. Hỏi ' + first_subject + ' và ' + second_subject + ' có bao nhiêu ' + object_subject + '?'
-    elif order_2 == 2:
-        sentence_4 = '. Hỏi ' + second_subject + ' và ' + first_subject + ' có bao nhiêu ' + object_subject + '?'
+    sentence_4 = '. Hỏi mỗi người có bao nhiêu ' + object_subject + '?'
 
     problem = sentence_1 + sentence_2 + sentence_3 + sentence_4
     return problem
@@ -72,10 +69,7 @@ def change_out(first_subject,second_subject,object_subject,general_action,keywor
     sentence_1 = first_subject + ' ' + general_action + ' %s '%(first_number) + object_subject + '. '
     sentence_2 = second_subject + ' ' + general_action + ' %s '%(second_number) + object_subject + '. ' 
     sentence_3 = first_subject + ' ' + keyword + ' %s '%(third_number) + object_subject + ' cho ' + second_subject
-    if order_2 == 1:
-        sentence_4 = '. Hỏi ' + first_subject + ' và ' + second_subject + ' có bao nhiêu ' + object_subject + '?'
-    elif order_2 == 2:
-        sentence_4 = '. Hỏi ' + second_subject + ' và ' + first_subject + ' có bao nhiêu ' + object_subject + '?'
+    sentence_4 = '. Hỏi mỗi người có bao nhiêu ' + object_subject + '?'
 
     problem = sentence_1 + sentence_2 + sentence_3 + sentence_4
     return problem
@@ -125,13 +119,13 @@ def combine(first_subject,second_subject,object_subject,general_action,keyword_c
 #def main():
 def out_data():
     df_data = pd.DataFrame(columns=['problem', 'problem_type'])
-    for i in range (0, 30000):    
-        first_subject = random.choice(owner_1st)
-        second_subject = random.choice(owner_1st)
+    for i in range (0, 10000):    
+        first_subject = random.choice(owner_2nd)
+        second_subject = random.choice(owner_2nd)
         while(first_subject == second_subject):
-            second_subject = random.choice(owner_1st)
+            second_subject = random.choice(owner_2nd)
         
-        object_subject = random.choice(object_1st)
+        object_subject = random.choice(object_2nd)
         general_action = random.choice(general_action_list)
         
         keyword_change_in = random.choice(change_in_list)
@@ -158,5 +152,5 @@ def out_data():
             problem = combine(first_subject,second_subject,object_subject,general_action,keyword_combine)
             df_data = df_data.append({'problem': problem, 'problem_type': 'combine'}, ignore_index=True)     
 
-    df_data.to_csv('data/train_data.csv', index=False, encoding="utf-8-sig")
+    df_data.to_csv('data/test_data.csv', index=False, encoding="utf-8-sig")
     print('done')

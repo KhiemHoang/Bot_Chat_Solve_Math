@@ -53,5 +53,6 @@ def get_bot_response():
 #     print("Friend: "+bot_response)
 #     return render_template('home.html',user_input=user_input,bot_response=bot_response)
 
+
 if __name__ == '__main__':
 	app.run(debug=True)
