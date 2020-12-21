@@ -24,6 +24,7 @@ def get_bot_response():
 
 # @app.route('/get', methods=['POST'])
 # def get_bot_response():
+
 #     userText = request.form['user_input']
 #     answer = ''
 
