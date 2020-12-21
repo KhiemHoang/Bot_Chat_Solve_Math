@@ -23,7 +23,7 @@ def solve_math_problem(annotator, text, math_type):
 
     elif (math_type == 'decrease'):
         match = """<b> Cách giải </b> <br> Đây là dạng toán giảm số lượng. Cách giải như sau:' <br>
-        - A có 'x' đồ vật. A mất đi 'y' đồ vật.
+        - A có 'x' đồ vật. A mất đi 'y' đồ vật. <br>
         - Vậy A có số đồ vật = <b>x - y</b> <br><br>"""
 
     df_final = pd.DataFrame(columns=['sentence', 'owner_1', 'verb', 'main_object', 'sub_object', 'quantity', 'is_question'])
