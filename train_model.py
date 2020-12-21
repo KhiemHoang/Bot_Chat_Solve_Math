@@ -60,16 +60,23 @@ def word_vertorize(X_data):
 
 
 #train model
-def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=50):       
-    X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.3, random_state=42)
+def train_model(classifier, X_data, y_data, X_test, y_test, is_neuralnet, n_epochs=30):       
+    X_train, X_val, y_train, y_val = train_test_split(X_data, y_data, test_size=0.1, random_state=42)
     
     # history = classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
-    classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
+    if is_neuralnet:
+        classifier.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=n_epochs, batch_size=512)
+        
+        val_predictions = classifier.predict(X_val)
+        test_predictions = classifier.predict(X_test)
+        val_predictions = val_predictions.argmax(axis=-1)
+        test_predictions = test_predictions.argmax(axis=-1)
+    else:
+        classifier.fit(X_train, y_train)
     
-    val_predictions = classifier.predict(X_val)
-    test_predictions = classifier.predict(X_test)
-    val_predictions = val_predictions.argmax(axis=-1)
-    test_predictions = test_predictions.argmax(axis=-1)
+        train_predictions = classifier.predict(X_train)
+        val_predictions = classifier.predict(X_val)
+        test_predictions = classifier.predict(X_test)
     
     print("Validation accuracy: ", metrics.accuracy_score(val_predictions, y_val))
     print("Test accuracy: ", metrics.accuracy_score(test_predictions, y_test))
@@ -98,9 +105,57 @@ def create_lstm_model():
     layer = LSTM(128, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
     layer = Dense(512, activation='relu')(layer)
+    layer = Dense(512, activation='relu')(layer)
+    layer = Dense(512, activation='relu')(layer)
     layer = Dense(128, activation='relu')(layer)
     
     output_layer = Dense(5, activation='softmax')(layer)
+    
+    classifier = models.Model(input_layer, output_layer)
+    
+    classifier.compile(optimizer=optimizers.Adam(), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    
+    return classifier
+
+def create_dnn_model():
+    input_layer = Input(shape=(100,))
+    layer = Dense(1024, activation='relu')(input_layer)
+    layer = Dense(1024, activation='relu')(layer)
+    layer = Dense(512, activation='relu')(layer)
+    output_layer = Dense(10, activation='softmax')(layer)
+    
+    classifier = models.Model(input_layer, output_layer)
+    classifier.compile(optimizer=optimizers.Adam(), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    
+    return classifier
+
+def create_gru_model():
+    input_layer = Input(shape=(100,))
+    
+    layer = Reshape((10, 10))(input_layer)
+    layer = GRU(128, activation='relu')(layer)
+    layer = Dense(512, activation='relu')(layer)
+    layer = Dense(512, activation='relu')(layer)
+    layer = Dense(128, activation='relu')(layer)
+    
+    output_layer = Dense(10, activation='softmax')(layer)
+    
+    classifier = models.Model(input_layer, output_layer)
+    
+    classifier.compile(optimizer=optimizers.Adam(), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    
+    return classifier
+
+def create_brnn_model():
+    input_layer = Input(shape=(100,))
+    
+    layer = Reshape((10, 10))(input_layer)
+    layer = Bidirectional(GRU(128, activation='relu'))(layer)
+    layer = Dense(512, activation='relu')(layer)
+    layer = Dense(512, activation='relu')(layer)
+    layer = Dense(128, activation='relu')(layer)
+    
+    output_layer = Dense(10, activation='softmax')(layer)
     
     classifier = models.Model(input_layer, output_layer)
     
@@ -120,6 +175,13 @@ def train_and_test():
     X_data_tfidf_svd = word_vertorize(X_train)
     X_test_tfidf_svd = word_vertorize(X_test)
     train_model(classifier, X_data=X_data_tfidf_svd, y_data=y_data_n, X_test=X_test_tfidf_svd, y_test=y_test_n, is_neuralnet=True)
+    
+    # classifier = create_dnn_model()
+    # train_model(classifier=classifier, X_data=X_data_tfidf_svd, y_data=y_data_n, X_test=X_test_tfidf_svd, y_test=y_test_n, is_neuralnet=True)
+
+    # classifier = create_brnn_model()
+    # train_model(classifier=classifier, X_data=X_data_tfidf_svd, y_data=y_data_n, X_test=X_test_tfidf_svd, y_test=y_test_n, is_neuralnet=True)
+
 
     classifier.save('MyModel_v2.h5')
 

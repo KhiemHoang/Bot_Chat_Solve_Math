@@ -119,13 +119,13 @@ def combine(first_subject,second_subject,object_subject,general_action,keyword_c
 #def main():
 def out_data():
     df_data = pd.DataFrame(columns=['problem', 'problem_type'])
-    for i in range (0, 10000):    
-        first_subject = random.choice(owner_2nd)
-        second_subject = random.choice(owner_2nd)
+    for i in range (0, 30000):    
+        first_subject = random.choice(owner_1st)
+        second_subject = random.choice(owner_1st)
         while(first_subject == second_subject):
-            second_subject = random.choice(owner_2nd)
+            second_subject = random.choice(owner_1st)
         
-        object_subject = random.choice(object_2nd)
+        object_subject = random.choice(object_1st)
         general_action = random.choice(general_action_list)
         
         keyword_change_in = random.choice(change_in_list)
@@ -152,5 +152,5 @@ def out_data():
             problem = combine(first_subject,second_subject,object_subject,general_action,keyword_combine)
             df_data = df_data.append({'problem': problem, 'problem_type': 'combine'}, ignore_index=True)     
 
-    df_data.to_csv('data/test_data.csv', index=False, encoding="utf-8-sig")
+    df_data.to_csv('data/train_data.csv', index=False, encoding="utf-8-sig")
     print('done')

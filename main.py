@@ -3,7 +3,7 @@
 # import combine
 # import increase_decrease
 # import train_model as model
-import predict
+# import predict
 # import data.create_data as create_data
 # import fasttext as ft
 # import pickle
@@ -24,8 +24,8 @@ if __name__ == '__main__':
     # elif math_type == 'increase' or math_type == 'decrease':
     #     increase_decrease.solve_math_problem(annotator, text, math_type)
     
-    # text = 'Xuân cầm 7 mô hình. Thầy cầm 60 mô hình. Hỏi Xuân và Thầy có tổng cộng bao nhiêu mô hình?'
-    predict.predict_math_type(annotator, text)
+    # text = 'Hùng có 2 quả thận. Sinh có 1 quả thận. Hùng hiến 1 quả thận cho Sinh. Hỏi mỗi người có bao nhiêu quả thận?'
+    # predict.predict_math_type(annotator, text)
     # model.dump_file(annotator)
     # model.train_and_test()
     # X_data = pickle.load(open('data/X_test.pkl', 'rb'))
@@ -34,3 +34,56 @@ if __name__ == '__main__':
     # annotator.close()
 
     # create_data.out_data()
+
+
+    print ('All I want - Kodaline \n')
+    print ("""All I want is nothing more
+To hear you knocking at my door
+'Cause if I could see your face once more
+I could die a happy man, I'm sure
+When you said your last goodbye
+I died a little bit inside
+I lay in tears in bed all night
+Alone without you by my side
+But if you loved me
+Why'd you leave me?
+Take my body
+Take my body
+All I want is
+And all I need is
+To find somebody
+I'll find somebody
+Like you, oh, oh
+Oh, oh
+You
+Like you
+'Cause you brought out the best of me
+A part of me I'd never seen
+You took my soul and wiped it clean
+Our love was made for movie screens
+But if you loved me
+Why'd you leave me?
+Take my body
+Take my body
+All I want is
+And all I need is
+To find somebody
+I'll find somebody
+
+Oh
+Oh, oh, oh, oh, oh
+Oh, oh, oh, oh, oh
+Oh, oh, oh, oh, oh, oh, oh
+Oh, oh, oh, oh, oh
+Oh, oh, oh, oh, oh
+Oh, oh, oh, oh, oh, oh, oh
+
+If you loved me
+Why'd you leave me?
+Take my body
+Take my body
+All I want is
+And all I need is
+To find somebody
+I'll find somebody
+Like you, oh""")
