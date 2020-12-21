@@ -2,8 +2,8 @@
 # import change_in_out
 # import combine
 # import increase_decrease
-import train_model as model
-# import predict
+# import train_model as model
+import predict
 # import data.create_data as create_data
 # import fasttext as ft
 # import pickle
@@ -25,9 +25,9 @@ if __name__ == '__main__':
     #     increase_decrease.solve_math_problem(annotator, text, math_type)
     
     # text = 'Xuân cầm 7 mô hình. Thầy cầm 60 mô hình. Hỏi Xuân và Thầy có tổng cộng bao nhiêu mô hình?'
-    # predict.predict_math_type(annotator, text)
+    predict.predict_math_type(annotator, text)
     # model.dump_file(annotator)
-    model.train_and_test()
+    # model.train_and_test()
     # X_data = pickle.load(open('data/X_test.pkl', 'rb'))
     # X_test = pickle.load(open('data/X_test.pkl', 'rb'))
     # ft.fstxt(annotator, X_data, X_test)
